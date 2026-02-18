@@ -585,7 +585,9 @@
 <h2 id="efficiency-check">Efficiency Check</h2>
 <p>My algorithm is no worse than one that checks each sample within the bounding box because it does exactly that: it restricts the search space to the rectangle defined by <span class="arithmatex">\([min\_x, max\_x] \times [min\_y, max\_y]\)</span>. It never checks pixels outside this range, ensuring the complexity is proportional to the area of the bounding box rather than the entire framebuffer.</p>
 <h2 id="result-screenshot">Result Screenshot</h2>
-<p><img alt="Task1" src="../images/Task1/Task1.png" width="300" /><img alt="Task1.6" src="../images/Task1/Task1.6.png" width="300" /></p>
+<p><img alt="test4.svg" src="../images/Task1/Task1.png" width="300" /><img alt="test6.svg" src="../images/Task1/Task1.6.png" width="300" /></p>
+<p><code>test4.svg</code>: I have the pixel inspector open on the thin red wedge. This shows that my rasterizer correctly finds the center points of pixels even for very thin and sharp triangles.</p>
+<p><code>test6.svg</code>: This test contains triangles with different winding orders. My code handles this by checking if the line equation results are either all positive or all negative. All shapes are rendered correctly.</p>
 <h2 id="extra-credit-optimizations">Extra Credit: Optimizations</h2>
 <p>I implemented two optimizations to improve rasterization speed beyond the simple bounding box check.</p>
 <ol>

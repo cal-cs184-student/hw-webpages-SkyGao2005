@@ -8,10 +8,8 @@
       
       
       
-        <link rel="canonical" href="https://cal-cs184-student.github.io/hw-webpages-SkyGao2005/hw1/Task1/">
+        <link rel="canonical" href="https://cal-cs184-student.github.io/hw-webpages-SkyGao2005/hw1/Task2/">
       
-      
-        <link rel="prev" href="../..">
       
       
       
@@ -23,7 +21,7 @@
     
     
       
-        <title>Task 1 - Gao Fei's CS184 Homework Webpage</title>
+        <title>Task 2: Antialiasing by Supersampling - Gao Fei's CS184 Homework Webpage</title>
       
     
     
@@ -72,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#task-1-drawing-single-color-triangles" class="md-skip">
+        <a href="#task-2-antialiasing-by-supersampling" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Task 1
+              Task 2: Antialiasing by Supersampling
             
           </span>
         </div>
@@ -196,13 +194,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../Task1/" class="md-tabs__link">
           
   
   
@@ -278,31 +274,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -320,7 +311,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -335,37 +326,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Task 1
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Task1/" class="md-nav__link">
         
   
   
@@ -381,87 +345,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#triangle-rasterization-algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Triangle Rasterization Algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#efficiency-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Efficiency Check
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#result-screenshot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Result Screenshot
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extra-credit-optimizations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Extra Credit: Optimizations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Extra Credit: Optimizations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#performance-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Performance Comparison
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -501,21 +384,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#triangle-rasterization-algorithm" class="md-nav__link">
+  <a href="#supersampling-algorithm-and-data-structures" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Triangle Rasterization Algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#efficiency-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Efficiency Check
+        Supersampling Algorithm and Data Structures
       
     </span>
   </a>
@@ -534,30 +406,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#extra-credit-optimizations" class="md-nav__link">
+  <a href="#why-extra-memory-is-needed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Extra Credit: Optimizations
+        Why Extra Memory is Needed
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Extra Credit: Optimizations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#performance-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Performance Comparison
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -578,50 +433,40 @@
 
 
 
-<h1 id="task-1-drawing-single-color-triangles">Task 1: Drawing Single-Color Triangles</h1>
-<h2 id="triangle-rasterization-algorithm">Triangle Rasterization Algorithm</h2>
-<p>To rasterize triangles, I implemented a bounding box approach. First, I determine the bounding box of the triangle by finding the minimum and maximum x and y coordinates of the three vertices, clamping them to the screen resolutions. I then iterate through every pixel coordinate <span class="arithmatex">\((x, y)\)</span> within this bounding box.</p>
-<p>For each pixel, I calculate the center point <span class="arithmatex">\((x + 0.5, y + 0.5)\)</span> and perform a point-in-triangle test. This is done using the three test functions derived from the cross-product of the triangle's edges. If the point lies on the correct side of all three half-planes (either all positive or all negative, depending on the winding order), the pixel is considered inside the triangle and is colored using <code>fill_pixel</code>.</p>
-<h2 id="efficiency-check">Efficiency Check</h2>
-<p>My algorithm is no worse than one that checks each sample within the bounding box because it does exactly that: it restricts the search space to the rectangle defined by <span class="arithmatex">\([min\_x, max\_x] \times [min\_y, max\_y]\)</span>. It never checks pixels outside this range, ensuring the complexity is proportional to the area of the bounding box rather than the entire framebuffer.</p>
-<h2 id="result-screenshot">Result Screenshot</h2>
-<p><figure id="_figure-1"><img alt="test4.svg" src="../images/Task1/Task1.png" width="300"><img alt="test6.svg" src="../images/Task1/Task1.6.png" width="300"><figcaption>Figure 1: test4.svg</figcaption></figure></p>
-<p><code>test4.svg</code>: I have the pixel inspector open on the thin red wedge. This shows that my rasterizer correctly finds the center points of pixels even for very thin and sharp triangles.</p>
-<p><code>test6.svg</code>: This test contains triangles with different winding orders. My code handles this by checking if the line equation results are either all positive or all negative. All shapes are rendered correctly.</p>
-<h2 id="extra-credit-optimizations">Extra Credit: Optimizations</h2>
-<p>I implemented two optimizations to improve rasterization speed beyond the simple bounding box check.</p>
+<h1 id="task-2-antialiasing-by-supersampling">Task 2: <strong>Antialiasing by Supersampling</strong></h1>
+<h2 id="supersampling-algorithm-and-data-structures">Supersampling Algorithm and Data Structures</h2>
+<p>Supersampling is a technique used to reduce aliasing artifacts by rendering the image at a higher resolution and then downsampling it to the output resolution. This process averages the colors within a pixel, creating smoother transitions at edges.</p>
+<p>To implement supersampling, I modified the rasterization pipeline to support a dynamically sized <code>sample_buffer</code>.</p>
 <ol>
-<li><strong>Incremental Test Function <span class="arithmatex">\(L\)</span> Updates:</strong> Instead of computing the full test function <span class="arithmatex">\(L_i(x,y)=-(x-X_i)dY_i+(y-Y_i)dX_i\)</span> for every pixel, I calculate an initial value at the start of the loop. For each step in the inner loop (as x increases), I simply update <span class="arithmatex">\(L\)</span> by adding <span class="arithmatex">\(-dY\)</span>. When moving to the next row (as y increases), I add <span class="arithmatex">\(dX\)</span>. This avoids performing time-consuming multiplication operations for every single pixel.</li>
-<li><strong>Early Exit:</strong> Since a triangle is a convex shape, if we are iterating along a line and have already entered the triangle, the moment we step outside the triangle, we know we will not re-enter it on that same line. I added a flag <code>entered</code>; if a pixel fails the edge check and <code>entered</code> is true, I immediately <code>break</code> the inner loop.</li>
+<li><strong>Data Structure</strong>: I resized <code>sample_buffer</code> from <code>width * height</code> to <code>width * height * sample_rate</code>, since each pixel in the original image is represented by <code>sample_rate</code> sub-pixels.</li>
+<li><strong>Rasterization (<code>rasterize_triangle</code>):</strong><ul>
+<li>Instead of testing a single point at the center of each pixel <span class="arithmatex">\((x+0.5,y+0.5)\)</span>, I divided each pixel into a <span class="arithmatex">\(\sqrt{\text{sample\_rate}}\times\sqrt{\text{sample\_rate}}\)</span> grid. I iterate through this sub-grid, checking if the center of each sub-pixel is inside the triangle. Then I store the color of the triangle in the specific index of <code>sample_buffer</code> corresponding to that sub-pixel.</li>
+<li>To maintain the efficiency optimizations from Task 1, I applied the incremental test function updates to work on this sub-pixel grid. The step size for the test functions <span class="arithmatex">\((dX, dY)\)</span> is scaled by <span class="arithmatex">\(1/\sqrt{\text{sample\_rate}}\)</span>.</li>
+<li>Also, for the “early exit” from Task 1, I organized the loops to iterate over the high-resolution sample_buffer. By treating the pixel <span class="arithmatex">\(y\)</span> coordinate and the sub-pixel <span class="arithmatex">\(\text{sub}\_y\)</span> index as a combined row iterator, I can still detect when the rasterizer leaves the triangle on a specific sub-pixel row. Once stepping out of the triangle, I immediately break the inner loop to skip the remaining empty space on that row.</li>
+</ul>
+</li>
+<li><strong>Resolve to Frame buffer</strong> (<code>resolve_to_framebuffer</code>): For every pixel in the final image, I iterate over its corresponding <code>sample_rate</code> sub-pixels in the <code>sample_buffer</code>. Then calculate the average color of these sub-pixels and write the result to the frame buffer. </li>
+<li><strong>Updates to Other Functions:</strong><ul>
+<li><code>set_sample_rate</code> and <code>set_framebuffer_target</code>: Resize the <code>sample_buffer</code> whenever the window is resized or the sample rate changes.</li>
+<li><code>fill_pixel</code>: Fill all sub-pixels of a pixel with the same color, ensuring points and lines remain visible.</li>
+</ul>
+</li>
 </ol>
-<h3 id="performance-comparison">Performance Comparison</h3>
-<p>I tested these changes using <code>test3.svg</code>. The Early Exit provided the biggest speed boost.</p>
-<table>
-<thead>
-<tr>
-<th><strong>Version</strong></th>
-<th><strong>Average Time (ms)</strong></th>
-<th><strong>Speedup</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Baseline (Naive Bounding Box)</strong></td>
-<td>10.341</td>
-<td>1.0x</td>
-</tr>
-<tr>
-<td><strong>Optimization 1 (Incremental Updates)</strong></td>
-<td>9.427</td>
-<td>~1.10x</td>
-</tr>
-<tr>
-<td><strong>Optimization 2 (Early Exit)</strong></td>
-<td>6.870</td>
-<td>~1.51x</td>
-</tr>
-</tbody>
-</table>
+<h2 id="result-screenshot">Result Screenshot</h2>
+<p><figure id="_figure-1"><img alt="Sample Rate 1" src="../images/Task2/Task2.1.png" style="width: 30%;"><figcaption>Figure 1: Sample Rate 1</figcaption></figure></p>
+<p><figure id="_figure-2"><img alt="Sample Rate 4" src="../images/Task2/Task2.2.png" style="width: 30%;"><figcaption>Figure 2: Sample Rate 4</figcaption></figure></p>
+<p><figure id="_figure-3"><img alt="Sample Rate 16" src="../images/Task2/Task2.3.png" style="width: 30%;"><figcaption>Figure 3: Sample Rate 16</figcaption></figure></p>
+<p><code>basic/test4.svg</code> at sample rates 1, 4, and 16. The pixel inspector is focused on the tip of the thin red triangle.</p>
+<ul>
+<li><strong>Sample Rate 1:</strong> The edges are pixelated. The thin tip of the triangle is broken because many pixel centers fall outside the narrow geometry.</li>
+<li><strong>Sample Rate 4:</strong> The edges are smoother. Lighter red appear where the triangle only partially covers a pixel. The tip is better connected.</li>
+<li><strong>Sample Rate 16:</strong> The edges look very smooth. The tip of the triangle is fully intact and renders as a continuous line with varying opacity.</li>
+</ul>
+<h2 id="why-extra-memory-is-needed">Why Extra Memory is Needed</h2>
+<p><strong>Is it possible to achieve the same results without more memory?</strong></p>
+<p>Yes, it is possible, but it comes with significant engineering tradeoffs.</p>
+<p>The <code>sample_buffer</code> requires <code>sample_rate</code> times more memory than the frame buffer because rasterization happens <strong>per-triangle</strong>, not per-pixel. When we draw a triangle, we update specific sub-pixels. Later, a second triangle might overlap the first one, overwriting some of those sub-pixels. To correctly calculate the final average color, we must store the independent color value for every single sub-pixel until all triangles are drawn.</p>
+<p>To avoid errors, we would need to perfectly resolve the depth order of all triangles before rasterization, and draw them from back to front (Painter's Algorithm). This approach trades memory for time, because sorting geometry and handling intersecting triangles are complex and time-consuming (potentially <span class="arithmatex">\(O(N \log N)\)</span> or worse)</p>
 
 
 

@@ -14,6 +14,8 @@
         <link rel="prev" href="../Task1/">
       
       
+        <link rel="next" href="../Task3/">
+      
       
         
       
@@ -467,6 +469,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -550,15 +580,15 @@
 
 
 
-<h1 id="task-2-antialiasing-by-supersampling">Task 2: <strong>Antialiasing by Supersampling</strong></h1>
+<h1 id="task-2-antialiasing-by-supersampling">Task 2: Antialiasing by Supersampling</h1>
 <h2 id="supersampling-algorithm-and-data-structures">Supersampling Algorithm and Data Structures</h2>
 <p>Supersampling is a technique used to reduce aliasing artifacts by rendering the image at a higher resolution and then downsampling it to the output resolution. This process averages the colors within a pixel, creating smoother transitions at edges.</p>
 <p>To implement supersampling, I modified the rasterization pipeline to support a dynamically sized <code>sample_buffer</code>.</p>
 <ol>
 <li><strong>Data Structure</strong>: I resized <code>sample_buffer</code> from <code>width * height</code> to <code>width * height * sample_rate</code>, since each pixel in the original image is represented by <code>sample_rate</code> sub-pixels.</li>
 <li><strong>Rasterization (<code>rasterize_triangle</code>):</strong><ul>
-<li>Instead of testing a single point at the center of each pixel <span class="arithmatex">\((x+0.5,y+0.5)\)</span>, I divided each pixel into a <span class="arithmatex">\(\sqrt{\text{sample\_rate}}\times\sqrt{\text{sample\_rate}}\)</span> grid. I iterate through this sub-grid, checking if the center of each sub-pixel is inside the triangle. Then I store the color of the triangle in the specific index of <code>sample_buffer</code> corresponding to that sub-pixel.</li>
-<li>To maintain the efficiency optimizations from Task 1, I applied the incremental test function updates to work on this sub-pixel grid. The step size for the test functions <span class="arithmatex">\((dX, dY)\)</span> is scaled by <span class="arithmatex">\(1/\sqrt{\text{sample\_rate}}\)</span>.</li>
+<li>Instead of testing a single point at the center of each pixel <span class="arithmatex">\((x+0.5,y+0.5)\)</span>, I divided each pixel into a <span class="arithmatex">\(\sqrt{\text{sample_rate}}\times\sqrt{\text{sample_rate}}\)</span> grid. I iterate through this sub-grid, checking if the center of each sub-pixel is inside the triangle. Then I store the color of the triangle in the specific index of <code>sample_buffer</code> corresponding to that sub-pixel.</li>
+<li>To maintain the efficiency optimizations from Task 1, I applied the incremental test function updates to work on this sub-pixel grid. The step size for the test functions <span class="arithmatex">\((dX, dY)\)</span> is scaled by <span class="arithmatex">\(1/\sqrt{\text{sample_rate}}\)</span>.</li>
 <li>Also, for the “early exit” from Task 1, I organized the loops to iterate over the high-resolution sample_buffer. By treating the pixel <span class="arithmatex">\(y\)</span> coordinate and the sub-pixel <span class="arithmatex">\(\text{sub}\_y\)</span> index as a combined row iterator, I can still detect when the rasterizer leaves the triangle on a specific sub-pixel row. Once stepping out of the triangle, I immediately break the inner loop to skip the remaining empty space on that row.</li>
 </ul>
 </li>
@@ -570,21 +600,6 @@
 </li>
 </ol>
 <h2 id="result-screenshot">Result Screenshot</h2>
-<figure>
-<p><img alt="Task 1" src="../images/Task2/Task2.1.png" width="300" />
-  </p>
-<figcaption>Figure 1: 这是图片标题</figcaption>
-</figure>
-<figure>
-<p><img alt="Task 1" src="../images/Task2/Task2.2.png" width="300" />
-  </p>
-<figcaption>Figure 1: 这是图片标题</figcaption>
-</figure>
-<figure>
-<p><img alt="Task 1" src="../images/Task2/Task2.3.png" width="300" />
-  </p>
-<figcaption>Figure 1: 这是图片标题</figcaption>
-</figure>
 <p><img alt="Sample Rate 1" src="../images/Task2/Task2.1.png" style="width: 30%;" /><img alt="Sample Rate 4" src="../images/Task2/Task2.2.png" style="width: 30%;" /><img alt="Sample Rate 16" src="../images/Task2/Task2.3.png" style="width: 30%;" /></p>
 <p><code>basic/test4.svg</code> at sample rates 1, 4, and 16. The pixel inspector is focused on the tip of the thin red triangle.</p>
 <ul>

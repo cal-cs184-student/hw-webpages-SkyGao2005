@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://cal-cs184-student.github.io/hw-webpages-SkyGao2005/hw1/Task5/">
+        <link rel="canonical" href="https://cal-cs184-student.github.io/hw-webpages-SkyGao2005/hw1/Task6/">
       
       
-        <link rel="prev" href="../Task4/">
+        <link rel="prev" href="../Task5/">
       
-      
-        <link rel="next" href="../Task6/">
       
       
         
@@ -25,7 +23,7 @@
     
     
       
-        <title>Task 5 - Gao Fei's CS184 Homework Webpage</title>
+        <title>Task 6 - Gao Fei's CS184 Homework Webpage</title>
       
     
     
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#task-5-pixel-sampling-for-texture-mapping" class="md-skip">
+        <a href="#task-6-level-sampling-with-mipmaps-for-texture-mapping" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Task 5
+              Task 6
             
           </span>
         </div>
@@ -449,6 +447,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -468,7 +494,7 @@
   <span class="md-ellipsis">
     
   
-    Task 5
+    Task 6
   
 
     
@@ -486,7 +512,7 @@
   <span class="md-ellipsis">
     
   
-    Task 5
+    Task 6
   
 
     
@@ -512,10 +538,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#explaining-pixel-sampling-and-texture-mapping" class="md-nav__link">
+  <a href="#explaining-level-sampling" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Explaining Pixel Sampling and Texture Mapping
+        Explaining Level Sampling
       
     </span>
   </a>
@@ -531,53 +557,36 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Implementation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#texture-mapping" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualizing-mipmap-levels" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Texture Mapping
+        Visualizing Mipmap levels
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sampling-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sampling Methods
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#result-screenshot" class="md-nav__link">
+  <a href="#tradeoffs-speed-memory-and-antialiasing-power" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Result Screenshot
+        Tradeoffs: Speed, Memory, and Antialiasing Power
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Result Screenshot">
+    <nav class="md-nav" aria-label="Tradeoffs: Speed, Memory, and Antialiasing Power">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#relative-differences" class="md-nav__link">
+  <a href="#speed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Relative Differences:
+        Speed
       
     </span>
   </a>
@@ -585,10 +594,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#when-will-there-be-a-large-difference" class="md-nav__link">
+  <a href="#memory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When will there be a large difference?
+        Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#antialiasing-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antialiasing Power
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result Screenshot
       
     </span>
   </a>
@@ -604,34 +635,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Task6/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Task 6
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -671,10 +674,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#explaining-pixel-sampling-and-texture-mapping" class="md-nav__link">
+  <a href="#explaining-level-sampling" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Explaining Pixel Sampling and Texture Mapping
+        Explaining Level Sampling
       
     </span>
   </a>
@@ -690,53 +693,36 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Implementation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#texture-mapping" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualizing-mipmap-levels" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Texture Mapping
+        Visualizing Mipmap levels
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sampling-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sampling Methods
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#result-screenshot" class="md-nav__link">
+  <a href="#tradeoffs-speed-memory-and-antialiasing-power" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Result Screenshot
+        Tradeoffs: Speed, Memory, and Antialiasing Power
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Result Screenshot">
+    <nav class="md-nav" aria-label="Tradeoffs: Speed, Memory, and Antialiasing Power">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#relative-differences" class="md-nav__link">
+  <a href="#speed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Relative Differences:
+        Speed
       
     </span>
   </a>
@@ -744,10 +730,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#when-will-there-be-a-large-difference" class="md-nav__link">
+  <a href="#memory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When will there be a large difference?
+        Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#antialiasing-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antialiasing Power
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result-screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result Screenshot
       
     </span>
   </a>
@@ -776,60 +784,137 @@
 
 
 
-<h1 id="task-5-pixel-sampling-for-texture-mapping">Task 5: "Pixel Sampling" for Texture Mapping</h1>
-<h2 id="explaining-pixel-sampling-and-texture-mapping">Explaining Pixel Sampling and Texture Mapping</h2>
-<p>Texture mapping is the process of projecting a 2D image (texture) onto a 3D surface. Because screen pixels rarely map exactly 1-to-1 to texture pixels, we must perform pixel sampling to determine the correct color for a given screen pixel. This involves mapping screen-space coordinates <span class="arithmatex">\((x, y)\)</span> back to normalized texture-space coordinates <span class="arithmatex">\((u, v)\)</span> and fetching the color from the texture image at that location.</p>
-<h2 id="implementation">Implementation</h2>
-<h3 id="texture-mapping">Texture Mapping</h3>
-<p>To implement texture mapping in <code>RasterizerImp::rasterize_textured_triangle</code>, I reused the code in <code>rasterize_interpolated_color_triangle</code> with a few changes:</p>
-<ul>
-<li><strong>Barycentric Interpolation:</strong> For points inside the triangle, I compute their barycentric coordinates <span class="arithmatex">\((\alpha, \beta, \gamma)\)</span> with the same algorithm.But instead of interpolate the given color values, I interpolated the <span class="arithmatex">\((u,v)\)</span> coordinates: <span class="arithmatex">\((u,v)=\alpha(u_0,v_0)+\beta(u_0,v_0)+\gamma (u_2,v_2)\)</span>.</li>
-<li><strong>Texture Sampling:</strong> Using the interpolated <span class="arithmatex">\((u, v)\)</span> coordinates, I sampled the texture color. Depending on the current pixel sampling method (<code>psm</code>), I called either <code>tex.sample_nearest(u,v)</code> or <code>tex.sample_bilinear(u,v)</code>. The resulting color was then written to the <code>sample_buffer</code>.</li>
-</ul>
-<h3 id="sampling-methods">Sampling Methods</h3>
+<h1 id="task-6-level-sampling-with-mipmaps-for-texture-mapping">Task 6: <strong>“Level sampling” with mipmaps for texture mapping</strong></h1>
+<h2 id="explaining-level-sampling">Explaining Level Sampling</h2>
+<p>Level sampling is an antialiasing technique used in texture mapping to solve the problem of minification—when a texture is applied to an object that appears much smaller on the screen than the texture's native resolution. Without level sampling, sampling a high-frequency texture across a small number of pixels leads to severe aliasing artifacts due to the Nyquist theorem (moiré patterns).</p>
+<p>Level sampling addresses this by precomputing a pyramid of progressively downsampled versions of the texture called mipmaps. If a pixel covers a large area of the texture, we sample from a higher, lower-resolution mipmap level. This ensures that the texture frequency roughly matches the sampling frequency of the pixels, effectively acting as a low-pass filter to eliminate high-frequency noise.</p>
+<h2 id="implementation"><strong>Implementation</strong></h2>
+<p>My implementation contains three main components: estimating the texture footprint, calculating the correct mipmap level, and executing the appropriate sampling strategy.</p>
 <ol>
 <li>
-<p><strong>Nearest Neighbor Sampling</strong> (<code>sample_nearest</code>)</p>
-<p>Nearest sampling is the simplest and fastest approach. For any given <span class="arithmatex">\((u, v)\)</span> coordinate, it simply finds the single closest texel in the texture space and uses its exact color.</p>
-<ol>
-<li>Scale the normalized <code>uv</code> coordinates by the texture's <code>width</code> and <code>height</code>.</li>
-<li>Use the <code>floor</code> function to get the nearest integer texel coordinates.</li>
-<li>Clamp the coordinates to <code>width(height)-1</code> to ensure they don’t exceed the texture boundaries.</li>
-</ol>
+<p><strong>Estimating the Texture Footprint</strong> (<code>rasterize_textured_triangle</code>)</p>
+<p>To determine how much texture space a single screen pixel covers, we need to calculate the rate of change of the texture coordinates <span class="arithmatex">\((u, v)\)</span> with respect to the screen coordinates <span class="arithmatex">\((x, y)\)</span>. I achieved this by computing the barycentric coordinates for the current pixel <span class="arithmatex">\((x, y)\)</span>, and for its adjacent neighbors at <span class="arithmatex">\((x+1, y)\)</span> and <span class="arithmatex">\((x, y+1)\)</span>.</p>
+<p>Using the linear property of edge functions, the edge function value <span class="arithmatex">\(L_i\)</span> changes by a constant amount when stepping exactly <span class="arithmatex">\(1\)</span> pixel horizontally or vertically (the optimization in <a href="https://cal-cs184-student.github.io/hw-webpages-SkyGao2005/hw1/Task1/#extra-credit-optimizations">Task 1</a>).</p>
+<p>Using these updated edge functions, I calculated the new barycentric coordinates and the <span class="arithmatex">\((u, v)\)</span> coordinates for the <span class="arithmatex">\((x+1, y)\)</span> and <span class="arithmatex">\((x, y+1)\)</span>. These are passed to the sampling function as <code>p_dx_uv</code> and <code>p_dy_uv</code> within the <code>SampleParams</code> struct.</p>
 </li>
 <li>
-<p><strong>Bilinear Sampling</strong> (<code>sample_bilinear</code>)</p>
-<p>Bilinear sampling smooths out the texture by considering the 4 closest texels around the sample point and computing a distance-weighted average of their colors.</p>
-<ol>
-<li>Map the UV coordinates to the texture space: Because texel colors are technically sampled at the center of each pixel (e.g., at <span class="arithmatex">\(0.5, 1.5, 2.5\)</span>), directly finding the surrounding neighbors can be complex. To simplify the computation, we scale the <span class="arithmatex">\((u, v)\)</span> coordinates by the texture's <code>width</code> and <code>height</code>, and then subtract <span class="arithmatex">\(0.5\)</span>. This shifts the coordinate system so we can easily use the <code>floor</code> function to find the texel.</li>
-<li>Apply the <code>floor</code> function to the shifted coordinates to get the top-left index <span class="arithmatex">\((s_0, t_0)\)</span>, and add <span class="arithmatex">\(1\)</span> to get bottom-right index <span class="arithmatex">\((s_1, t_1)\)</span>.</li>
-<li>After clamping the indices to prevent out-of-bounds access, fetch the colors of the 4 texels <span class="arithmatex">\((u_{00},u_{10},u_{01},u_{11})\)</span>.</li>
-<li>Perform bilinear interpolation: <span class="arithmatex">\(u_0=\text{lerp}(x-s_0,u_{00},u_{10}),u_1=\text{lerp}(x-s_0,u_{01},u_{11}),f(x,y)=\text{lerp}(y-t_0,u_0,u_1)\)</span></li>
-</ol>
+<p><strong>Calculating the Mipmap Level</strong> (<code>Texture::get_level</code>)</p>
+<p>Once the texture coordinates for the current pixel and its neighbors are known, the finite differences can be used to approximate the partial derivatives:</p>
+<div class="arithmatex">\[
+\frac{du}{dx} \approx u(x+1,y) - u(x,y) \quad  \quad \frac{dv}{dx} \approx v(x+1,y) - v(x,y)\\\frac{du}{dy} \approx u(x,y+1) - u(x,y) \quad  \quad \frac{dv}{dy} \approx v(x,y+1) - v(x,y)
+\]</div>
+<p>Because <span class="arithmatex">\((u, v)\)</span> are normalized coordinates in the <span class="arithmatex">\([0, 1]\)</span> range, I multiplied these differences by the texture's <code>width</code> and <code>height</code> to scale them into texel space.</p>
+<p>To ensure we don't alias in the direction of greatest stretch, I took the maximum of the lengths of the two difference vectors:</p>
+<div class="arithmatex">\[
+L = \max\left( \sqrt{\left(\frac{du}{dx}\right)^2 + \left(\frac{dv}{dx}\right)^2}, \sqrt{\left(\frac{du}{dy}\right)^2 + \left(\frac{dv}{dy}\right)^2} \right)
+\]</div>
+<p>Finally, the continuous mipmap level <span class="arithmatex">\(D\)</span> is computed as:</p>
+<div class="arithmatex">\[
+D = \log_2(\max(L, 1.0))
+\]</div>
 </li>
-</ol>
-<h2 id="result-screenshot">Result Screenshot</h2>
-<p><img alt="Task5.1.png" src="../images/Task5/Task5.1.png" style="width: 24%;" /><img alt="Task5.3.png" src="../images/Task5/Task5.3.png" style="width: 24%;" /><img alt="Task5.2.png" src="../images/Task5/Task5.2.png" style="width: 24%;" /><img alt="Task5.4.png" src="../images/Task5/Task5.4.png" style="width: 24%;" /></p>
-<p>The screenshots above are images of the <code>test2.svg</code> rendered under four different texture and pixel sampling settings. By zooming in using the pixel inspector, we can clearly observe how the sampling methods handle the texture details, especially along curved boundaries and high-frequency color transitions.</p>
-<h3 id="relative-differences"><strong>Relative Differences:</strong></h3>
+<li>
+<p><strong>Level Sampling Strategies</strong> (<code>Texture::sample</code>)</p>
+<p>The <code>sample</code> function acts as the core dispatcher, handling combinations of Level Sampling Methods (<code>lsm</code>) and Pixel Sampling Methods (<code>psm</code>):</p>
 <ul>
-<li><strong>At 1 sample per pixel:</strong><ul>
-<li><em>Nearest sampling</em> produces a highly blocky and pixelated image, because it simply takes the color of the closest single texel. This leads to severe aliasing along the edges of the shapes in the texture.</li>
-<li><em>Bilinear sampling</em> smoothly interpolates between the surrounding texels. This effectively blurs the boundaries and the lines, creating continuous color gradients.</li>
+<li><strong><code>L_ZERO</code></strong>: Ignores the computed level and samples from the base level 0 (full resolution).</li>
+<li><strong><code>L_NEAREST</code></strong>: Takes the continuous level <span class="arithmatex">\(D\)</span>, rounds it to the nearest integer, clamps it to the valid range <span class="arithmatex">\([0, \text{mipmap.size()} - 1]\)</span>, and samples from that discrete level.</li>
+<li><strong><code>L_LINEAR</code></strong>: Calculates <span class="arithmatex">\(D\)</span>, then bounds it between the adjacent lower and upper integer levels by using the function <code>floor</code> and <code>ceil</code>. It samples the color from both levels and performs a linear interpolation based on <span class="arithmatex">\(D\)</span>. When paired with <code>P_LINEAR</code>, this achieves full trilinear filtering.</li>
 </ul>
 </li>
-<li><strong>At 16 samples per pixel</strong>:<ul>
-<li>Both <em>Nearest</em> and <em>Bilinear</em> look smooth, and it is difficult to tell them apart at a glance.</li>
-<li><strong>Reason</strong>: When we perform supersampling anti-aliasing, the rasterizer is taking 16 independent point samples within a single screen pixel and averaging them. This process of taking 16 slightly offset "nearest" samples and averaging them effectively mimics the weighted neighborhood averaging that bilinear sampling does—except it is happening in screen space. Because the high sample rate already provides massive spatial smoothing, the additional localized smoothing from bilinear sampling becomes redundant, resulting in nearly identical visuals.</li>
-</ul>
-</li>
-</ul>
-<h3 id="when-will-there-be-a-large-difference">When will there be a large difference?</h3>
-<p>A large visual difference between <em>Nearest</em> and <em>Bilinear</em> sampling primarily occurs under two conditions:</p>
-<ol>
-<li><strong>Texture Magnification:</strong> When the texture resolution is lower than the screen resolution. In this case, a single texel maps to multiple screen pixels. Nearest sampling will render these texels as solid squares, whereas bilinear sampling will create smooth gradients between them.</li>
-<li><strong>Low Screen Sampling Rate:</strong> As observed above, if supersampling is enabled, the anti-aliasing process smooths out the blocks. The difference is only highly visible when supersampling is turned off or set very low.</li>
 </ol>
+<h2 id="visualizing-mipmap-levels">Visualizing Mipmap levels</h2>
+<p>To better illustrate the differences between these mipmap sampling methods, I used an LLM to generate a custom grid texture and applied it to a plane with extreme perspective distortion. The original provided images lacked the significant depth scaling required to clearly show mipmap transitions.</p>
+<p>I also implemented a debug mode (toggled via the 'D' key) that maps the sampled mipmap level to a color gradient—ranging from <strong>blue</strong> (level 0) to <strong>red</strong> (highest level).</p>
+<p><img alt="Task6.4.png" src="../images/Task6/Task6.4.png" style="width: 30%;" /><img alt="Task6.5.png" src="../images/Task6/Task6.5.png" style="width: 30%;" /><img alt="Task6.6.png" src="../images/Task6/Task6.6.png" style="width: 30%;" /></p>
+<p><img alt="Task6.1.png" src="../images/Task6/Task6.1.png" style="width: 30%;" /><img alt="Task6.2.png" src="../images/Task6/Task6.2.png" style="width: 30%;" /><img alt="Task6.3.png" src="../images/Task6/Task6.3.png" style="width: 30%;" /></p>
+<ul>
+<li><code>L_ZERO</code> (Level 0 Only): As seen in the debug view, the entire plane is sampled at level 0 (blue). Looking at the texture render, the distant parts of the grid collapse into a aliased moiré pattern because the high-frequency grid lines cannot be represented by the sparse pixel sampling rate.</li>
+<li><code>L_NEAREST</code> (Nearest Level): The debug view shows discrete bands of color as the renderer switches from one integer mipmap level to the next. In the texture render, this causes noticeable sharp transitions in blurriness as the grid recedes into the distance.</li>
+<li><code>L_LINEAR</code> (Linear Level Interpolation): The debug view displays a perfectly smooth gradient from blue to red, indicating continuous transitions between levels. In the texture render, the sharp transitions are entirely eliminated.</li>
+</ul>
+<h2 id="tradeoffs-speed-memory-and-antialiasing-power">Tradeoffs: Speed, Memory, and Antialiasing Power</h2>
+<table>
+<thead>
+<tr>
+<th>Sampling Technique</th>
+<th>Configuration</th>
+<th>Avg. Render Time</th>
+<th>Buffer Memory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Baseline</td>
+<td>L_ZERO, P_NEAREST, 1x SS</td>
+<td>~14.1 ms</td>
+<td>28,125 KB</td>
+</tr>
+<tr>
+<td>Pixel Sampling</td>
+<td>L_ZERO, P_LINEAR, 1x SS</td>
+<td>~27.1 ms</td>
+<td>28,125 KB</td>
+</tr>
+<tr>
+<td>Level Sampling (Nearest)</td>
+<td>L_NEAREST, P_NEAREST, 1x SS</td>
+<td>~25.7 ms</td>
+<td>28,125 KB</td>
+</tr>
+<tr>
+<td>Level Sampling (Linear)</td>
+<td>L_LINEAR, P_NEAREST, 1x SS</td>
+<td>~37.2 ms</td>
+<td>28,125 KB</td>
+</tr>
+<tr>
+<td>Supersampling (4x)</td>
+<td>L_ZERO, P_NEAREST, 4x SS</td>
+<td>~53.1 ms</td>
+<td>95,625 KB</td>
+</tr>
+<tr>
+<td>Supersampling (9x)</td>
+<td>L_ZERO, P_NEAREST, 9x SS</td>
+<td>~115.5 ms</td>
+<td>208,125 KB</td>
+</tr>
+<tr>
+<td>Supersampling (16x)</td>
+<td>L_ZERO, P_NEAREST, 16x SS</td>
+<td>~201.3 ms</td>
+<td>365,625 KB</td>
+</tr>
+</tbody>
+</table>
+<h3 id="speed">Speed</h3>
+<ul>
+<li><strong>Pixel Sampling:</strong> Switching from <code>P_NEAREST</code> to <code>P_LINEAR</code> roughly doubled the render time because it requires fetching four texels instead of one and performing 2D interpolation.</li>
+<li><strong>Level Sampling:</strong> Calculating the mipmap level adds overhead (although the mipmap pyramid is still generated during initialization, regardless of the sampling method). <code>L_NEAREST</code> increased time to <strong>25.7 ms</strong>. <code>L_LINEAR</code> was the most expensive texture filtering method at <strong>37.2 ms</strong>.</li>
+<li><strong>Supersampling:</strong> Render times scaled almost linearly with the sample rate. 16x supersampling caused the render time to increase to over <strong>201 ms</strong> (a ~14x increase over the baseline).</li>
+</ul>
+<h3 id="memory">Memory</h3>
+<ul>
+<li><strong>Pixel &amp; Level Sampling:</strong> As shown in the data, the sample buffer memory remains constant at 28,125 KB regardless of the pixel or level sampling method. However, storing the mipmap pyramid itself inherently requires about <strong>33%</strong> more texture memory than a single high-resolution texture.</li>
+<li><strong>Supersampling:</strong> Memory usage explodes as the sample rate increases. Moving from 1x to 16x supersampling increased the buffer memory from <strong>28 MB</strong> to over <strong>365 MB.</strong></li>
+</ul>
+<h3 id="antialiasing-power">Antialiasing Power</h3>
+<ul>
+<li><strong>Pixel Sampling:</strong> <code>P_LINEAR</code> effectively smooths out blocky textures when magnification happens, but fails to fix high-frequency noise and moiré patterns in minification.</li>
+<li><strong>Level Sampling:</strong> Mipmapping directly solves minification aliasing. By sampling from lower-resolution textures, it eliminates moiré patterns perfectly. However, it does not fix jagged polygon edges.</li>
+<li><strong>Supersampling:</strong> It fixes both texture aliasing and geometric edge jaggies, but at a massive cost to both speed and memory.</li>
+</ul>
+<h3 id="result-screenshot">Result Screenshot</h3>
+<p><img alt="Task6-0-n.png" src="../images/Task6/Task6-0-n.png" style="width: 45%;" /><img alt="Task6-n-n.png" src="../images/Task6/Task6-n-n.png" style="width: 45%;" /></p>
+<p><img alt="Task6-0-b.png" src="../images/Task6/Task6-0-b.png" style="width: 45%;" /><img alt="Task6-n-b.png" src="../images/Task6/Task6-n-b.png" style="width: 45%;" /></p>
+<p>The screenshots above are images of the checkerboard I generated.</p>
+<ul>
+<li><code>L_ZERO</code> and <code>P_NEAREST</code>: Without any filtering, this produces the worst result. The foreground pixels look blocky, while the distant parts of the grid collapse into moiré pattern.</li>
+<li><code>L_ZERO</code> and <code>P_LINEAR</code>: Bilinear pixel filtering smooths out the grid lines slightly in the  foreground, making them look a bit softer. However, because it still strictly samples from the full-resolution texture, the distant moiré patterns remain completely unresolved.</li>
+<li><code>L_NEAREST</code> and <code>P_NEAREST</code>: By enabling nearest-level mipmapping, the distant moiré patterns are successfully eliminated. The grid fades into a gray blur in the distance. However, because we are using nearest logic on both the level and the pixels, we can clearly see sharp transitions horizontally across the image.</li>
+<li><code>L_NEAREST</code> and <code>P_LINEAR</code>: This combination eliminates the distance moiré while simultaneously softening the internal details of the grid within each level band. However, the sharp transition between the different mipmap levels are still visible. Only by upgrading to <code>L_LINEAR</code> would solve that problem.</li>
+</ul>
 
 
 

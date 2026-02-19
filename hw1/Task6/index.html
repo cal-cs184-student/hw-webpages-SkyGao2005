@@ -822,7 +822,7 @@
 <li>
 <p><strong>Estimating the Texture Footprint</strong> (<code>rasterize_textured_triangle</code>)</p>
 <p>To determine how much texture space a single screen pixel covers, we need to calculate the rate of change of the texture coordinates <span class="arithmatex">\((u, v)\)</span> with respect to the screen coordinates <span class="arithmatex">\((x, y)\)</span>. I achieved this by computing the barycentric coordinates for the current pixel <span class="arithmatex">\((x, y)\)</span>, and for its adjacent neighbors at <span class="arithmatex">\((x+1, y)\)</span> and <span class="arithmatex">\((x, y+1)\)</span>.</p>
-<p>Using the linear property of edge functions, the edge function value <span class="arithmatex">\(L_i\)</span> changes by a constant amount when stepping exactly <span class="arithmatex">\(1\)</span> pixel horizontally or vertically (the optimization in <a href="https://cal-cs184-student.github.io/hw-webpages-SkyGao2005/hw1/Task1/#extra-credit-optimizations">Task 1</a>).</p>
+<p>Using the linear property of edge functions, the edge function value <span class="arithmatex">\(L_i\)</span> changes by a constant amount when stepping exactly <span class="arithmatex">\(1\)</span> pixel horizontally or vertically (the optimization in <a href="hw1/Task1.md">Task 1</a>.</p>
 <p>Using these updated edge functions, I calculated the new barycentric coordinates and the <span class="arithmatex">\((u, v)\)</span> coordinates for the <span class="arithmatex">\((x+1, y)\)</span> and <span class="arithmatex">\((x, y+1)\)</span>. These are passed to the sampling function as <code>p_dx_uv</code> and <code>p_dy_uv</code> within the <code>SampleParams</code> struct.</p>
 </li>
 <li>

@@ -816,7 +816,7 @@
 <h2 id="explaining-level-sampling">Explaining Level Sampling</h2>
 <p>Level sampling is an antialiasing technique used in texture mapping to solve the problem of minification—when a texture is applied to an object that appears much smaller on the screen than the texture's native resolution. Without level sampling, sampling a high-frequency texture across a small number of pixels leads to severe aliasing artifacts due to the Nyquist theorem (moiré patterns).</p>
 <p>Level sampling addresses this by precomputing a pyramid of progressively downsampled versions of the texture called mipmaps. If a pixel covers a large area of the texture, we sample from a higher, lower-resolution mipmap level. This ensures that the texture frequency roughly matches the sampling frequency of the pixels, effectively acting as a low-pass filter to eliminate high-frequency noise.</p>
-<h2 id="implementation"><strong>Implementation</strong></h2>
+<h2 id="implementation">Implementation</h2>
 <p>My implementation contains three main components: estimating the texture footprint, calculating the correct mipmap level, and executing the appropriate sampling strategy.</p>
 <ol>
 <li>

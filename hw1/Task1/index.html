@@ -751,7 +751,10 @@
 <h1 id="task-1-drawing-single-color-triangles">Task 1: Drawing Single-Color Triangles</h1>
 <h2 id="triangle-rasterization-algorithm">Triangle Rasterization Algorithm</h2>
 <p>To rasterize triangles, I implemented a bounding box approach. First, I determine the bounding box of the triangle by finding the minimum and maximum x and y coordinates of the three vertices, clamping them to the screen resolutions. I then iterate through every pixel coordinate <span class="arithmatex">\((x, y)\)</span> within this bounding box.</p>
-<p>For each pixel, I calculate the center point <span class="arithmatex">\((x + 0.5, y + 0.5)\)</span> and perform a point-in-triangle test. This is done using the three test functions derived from the cross-product of the triangle's edges. If the point lies on the correct side of all three half-planes (either all positive or all negative, depending on the winding order), the pixel is considered inside the triangle and is colored using <code>fill_pixel</code>.</p>
+<p>For each pixel, I calculate the center point <span class="arithmatex">\((x + 0.5, y + 0.5)\)</span> and perform a point-in-triangle test. This is done using the three test functions derived from the cross-product of the triangle's edges. If the point lies on the correct side of all three half-planes (either all positive or all negative, depending on the winding order), the pixel is considered inside the triangle and is colored using <code>fill_pixel</code>.
+$$
+L_i = (P_{i+1}-P_i)\times (x-x_i,y-y_i)
+$$</p>
 <h2 id="efficiency-check">Efficiency Check</h2>
 <p>My algorithm is no worse than one that checks each sample within the bounding box because it does exactly that: it restricts the search space to the rectangle defined by <span class="arithmatex">\([min\_x, max\_x] \times [min\_y, max\_y]\)</span>. It never checks pixels outside this range, ensuring the complexity is proportional to the area of the bounding box rather than the entire framebuffer.</p>
 <h2 id="result-screenshot">Result Screenshot</h2>

@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://cal-cs184-student.github.io/hw-webpages-SkyGao2005/hw1/Task2/">
+        <link rel="canonical" href="https://cal-cs184-student.github.io/hw-webpages-SkyGao2005/hw1/Task4/">
       
       
-        <link rel="prev" href="../Task1/">
+        <link rel="prev" href="../Task3/">
       
-      
-        <link rel="next" href="../Task3/">
       
       
         
@@ -25,7 +23,7 @@
     
     
       
-        <title>Task 2 - Gao Fei's CS184 Homework Webpage</title>
+        <title>Task 4 - Gao Fei's CS184 Homework Webpage</title>
       
     
     
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#task-2-antialiasing-by-supersampling" class="md-skip">
+        <a href="#task4-barycentric-coordinates" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Task 2
+              Task 4
             
           </span>
         </div>
@@ -365,37 +363,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Task 2
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Task2/" class="md-nav__link">
         
   
   
@@ -411,59 +382,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#supersampling-algorithm-and-data-structures" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Supersampling Algorithm and Data Structures
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#result-screenshot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Result Screenshot
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-extra-memory-is-needed" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why Extra Memory is Needed
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -501,10 +419,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Task4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 4
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -520,6 +465,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explaining-barycentric-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explaining Barycentric Coordinates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precision-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Precision Issue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#result-screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -559,10 +568,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#supersampling-algorithm-and-data-structures" class="md-nav__link">
+  <a href="#explaining-barycentric-coordinates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supersampling Algorithm and Data Structures
+        Explaining Barycentric Coordinates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precision-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Precision Issue
       
     </span>
   </a>
@@ -574,17 +605,6 @@
     <span class="md-ellipsis">
       
         Result Screenshot
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-extra-memory-is-needed" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why Extra Memory is Needed
       
     </span>
   </a>
@@ -608,38 +628,35 @@
 
 
 
-<h1 id="task-2-antialiasing-by-supersampling">Task 2: Antialiasing by Supersampling</h1>
-<h2 id="supersampling-algorithm-and-data-structures">Supersampling Algorithm and Data Structures</h2>
-<p>Supersampling is a technique used to reduce aliasing artifacts by rendering the image at a higher resolution and then downsampling it to the output resolution. This process averages the colors within a pixel, creating smoother transitions at edges.</p>
-<p>To implement supersampling, I modified the rasterization pipeline to support a dynamically sized <code>sample_buffer</code>.</p>
-<ol>
-<li><strong>Data Structure</strong>: I resized <code>sample_buffer</code> from <code>width * height</code> to <code>width * height * sample_rate</code>, since each pixel in the original image is represented by <code>sample_rate</code> sub-pixels.</li>
-<li><strong>Rasterization (<code>rasterize_triangle</code>):</strong><ul>
-<li>Instead of testing a single point at the center of each pixel <span class="arithmatex">\((x+0.5,y+0.5)\)</span>, I divided each pixel into a <span class="arithmatex">\(\sqrt{\text{sample_rate}}\times\sqrt{\text{sample_rate}}\)</span> grid. I iterate through this sub-grid, checking if the center of each sub-pixel is inside the triangle. Then I store the color of the triangle in the specific index of <code>sample_buffer</code> corresponding to that sub-pixel.</li>
-<li>To maintain the efficiency optimizations from Task 1, I applied the incremental test function updates to work on this sub-pixel grid. The step size for the test functions <span class="arithmatex">\((dX, dY)\)</span> is scaled by <span class="arithmatex">\(1/\sqrt{\text{sample_rate}}\)</span>.</li>
-<li>Also, for the “early exit” from Task 1, I organized the loops to iterate over the high-resolution sample_buffer. By treating the pixel <span class="arithmatex">\(y\)</span> coordinate and the sub-pixel <span class="arithmatex">\(\text{sub}\_y\)</span> index as a combined row iterator, I can still detect when the rasterizer leaves the triangle on a specific sub-pixel row. Once stepping out of the triangle, I immediately break the inner loop to skip the remaining empty space on that row.</li>
-</ul>
-</li>
-<li><strong>Resolve to Frame buffer</strong> (<code>resolve_to_framebuffer</code>): For every pixel in the final image, I iterate over its corresponding <code>sample_rate</code> sub-pixels in the <code>sample_buffer</code>. Then calculate the average color of these sub-pixels and write the result to the frame buffer. </li>
-<li><strong>Updates to Other Functions:</strong><ul>
-<li><code>set_sample_rate</code> and <code>set_framebuffer_target</code>: Resize the <code>sample_buffer</code> whenever the window is resized or the sample rate changes.</li>
-<li><code>fill_pixel</code>: Fill all sub-pixels of a pixel with the same color, ensuring points and lines remain visible.</li>
-</ul>
-</li>
-</ol>
-<h2 id="result-screenshot">Result Screenshot</h2>
-<p><img alt="Sample Rate 1" src="../images/Task2/Task2.1.png" style="width: 30%;" /><img alt="Sample Rate 4" src="../images/Task2/Task2.2.png" style="width: 30%;" /><img alt="Sample Rate 16" src="../images/Task2/Task2.3.png" style="width: 30%;" /></p>
-<p><code>basic/test4.svg</code> at sample rates 1, 4, and 16. The pixel inspector is focused on the tip of the thin red triangle.</p>
+<h1 id="task4-barycentric-coordinates">Task4: <strong>Barycentric coordinates</strong></h1>
+<h2 id="explaining-barycentric-coordinates">Explaining Barycentric Coordinates</h2>
+<p>We often specify attributes—such as colors, texture coordinates, or normal vectors—only at the three vertices of a triangle. However, to render a solid shape, we need to obtain smoothly varying values for every single pixel across the triangle's surface. To achieve this smooth transition from the given vertex values, we use barycentric coordinates for interpolation.</p>
+<p>Barycentric coordinates provide a coordinate system for defining the location of a point strictly relative to the vertices of a triangle. A point <span class="arithmatex">\(P\)</span> inside a triangle with vertices <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span>, and <span class="arithmatex">\(C\)</span> is expressed as a weighted sum of those three vertices:</p>
+<div class="arithmatex">\[
+P = \alpha A + \beta B + \gamma C
+\]</div>
+<p>For the point to be valid inside the triangle, the weights must satisfy <span class="arithmatex">\(\alpha + \beta + \gamma = 1\)</span>, and <span class="arithmatex">\(\alpha, \beta, \gamma \ge 0\)</span>.</p>
+<p><img alt="Task4.1.png" src="../images/Task4/Task4.1.png" style="width: 45%;" /></p>
+<p>To understand this visually, we took color interpolation as an example. The triangle above has one pure red, one pure green, and one pure blue vertex. Barycentric coordinates act as proportional weights based on area. If a point <span class="arithmatex">\(P\)</span> is very close to the red vertex, its corresponding weight will be close to <span class="arithmatex">\(1\)</span>, while the weights for green and blue will be close to <span class="arithmatex">\(0\)</span>, making that pixel predominantly red. </p>
+<p>As moving across the surface, these weights shift proportionally, which allows us to smoothly interpolate the colors across the entire geometry, resulting in the smooth gradients seen in the image.</p>
+<h2 id="implementation">Implementation</h2>
+<p>The function <code>rasterize_interpolated_color_triangle</code> is based on the standard <code>rasterize_triangle</code> function, which calculates the exact barycentric weights for every sample point to blend the colors <span class="arithmatex">\(C_0\)</span>, <span class="arithmatex">\(C_1\)</span>, and <span class="arithmatex">\(C_2\)</span>.</p>
+<p>The edge functions used for the point-in-triangle test directly map to the proportional areas needed for barycentric coordinates:</p>
 <ul>
-<li><strong>Sample Rate 1:</strong> The edges are pixelated. The thin tip of the triangle is broken because many pixel centers fall outside the narrow geometry.</li>
-<li><strong>Sample Rate 4:</strong> The edges are smoother. Lighter red appear where the triangle only partially covers a pixel. The tip is better connected.</li>
-<li><strong>Sample Rate 16:</strong> The edges look very smooth. The tip of the triangle is fully intact and renders as a continuous line with varying opacity.</li>
+<li><span class="arithmatex">\(L_0 = (P_1-P_0)\times (x-x_0,y-y_0)\)</span>. The edge function for <span class="arithmatex">\(P_0 \rightarrow P_1\)</span>, which gives a value proportional to the area of the sub-triangle formed by <span class="arithmatex">\(P_0, P_1, P\)</span>. Since this sub-triangle is opposite to vertex <span class="arithmatex">\(P_2\)</span> <span class="arithmatex">\(P_2\)</span><span class="arithmatex">\(L_0\)</span> represents the weight for <span class="arithmatex">\(P_2\)</span> (<span class="arithmatex">\(\gamma\)</span>).</li>
+<li><span class="arithmatex">\(L_1 = (P_2-P_1)\times(x-x_1,y-y_1)\)</span>. The edge function for <span class="arithmatex">\(P_1 \rightarrow P_2\)</span>, representing the area opposite to <span class="arithmatex">\(P_0\)</span>. This determines the weight for <span class="arithmatex">\(P_0\)</span> (<span class="arithmatex">\(\alpha\)</span>).</li>
+<li><span class="arithmatex">\(L_2 = (P_0-P_2)\times(x-x_2,y-y_2)\)</span>. The edge function for <span class="arithmatex">\(P_2 \rightarrow P_0\)</span>, representing the area opposite to <span class="arithmatex">\(P_1\)</span>. This determines the weight for <span class="arithmatex">\(P_1\)</span> (<span class="arithmatex">\(\beta\)</span>).</li>
 </ul>
-<h2 id="why-extra-memory-is-needed">Why Extra Memory is Needed</h2>
-<p><strong>Is it possible to achieve the same results without more memory?</strong></p>
-<p>Yes, it is possible, but it comes with significant engineering tradeoffs.</p>
-<p>The <code>sample_buffer</code> requires <code>sample_rate</code> times more memory than the frame buffer because rasterization happens <strong>per-triangle</strong>, not per-pixel. When we draw a triangle, we update specific sub-pixels. Later, a second triangle might overlap the first one, overwriting some of those sub-pixels. To correctly calculate the final average color, we must store the independent color value for every single sub-pixel until all triangles are drawn.</p>
-<p>To avoid errors, we would need to perfectly resolve the depth order of all triangles before rasterization, and draw them from back to front (Painter's Algorithm). This approach trades memory for time, because sorting geometry and handling intersecting triangles are complex and time-consuming (potentially <span class="arithmatex">\(O(N \log N)\)</span> or worse)</p>
+<p>The final weights are normalized by the sum of all three edge functions:</p>
+<div class="arithmatex">\[
+\alpha = \frac{L_1}{L_0 + L_1 + L_2},\beta = \frac{L_2}{L_0 + L_1 + L_2},\gamma = \frac{L_0}{L_0 + L_1 + L_2}
+\]</div>
+<h2 id="precision-issue">Precision Issue</h2>
+<p>After the first implementation, an artifact appeared: A white line would render along the shared edges of triangles. This was identified as a floating-point precision issue where accumulated values drifted, causing points exactly on the edge to evaluate as microscopic numbers and fail the boundary check. To fix this, the edge function accumulator variables were changed from <code>float</code> to <code>double</code>, and an <code>EPSILON = 1e-6</code> tolerance was added to the boundary checks to ensure robust rasterization without dropping edge pixels.</p>
+<p><img alt="Task4.2.png" src="../images/Task4/Task4.2.png" style="width: 45%;" /></p>
+<h2 id="result-screenshot">Result Screenshot</h2>
+<p><img alt="Task4.3.png" src="../images/Task4/Task4.3.png" style="width: 45%;" /></p>
+<p><code>test7.svg</code>: This test shows the barycentric interpolation working flawlessly, producing a smoothly blended color wheel.</p>
 
 
 

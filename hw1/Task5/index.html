@@ -765,8 +765,10 @@
 <li>Scale the normalized <code>uv</code> coordinates by the texture's <code>width</code> and <code>height</code>.</li>
 <li>Use the <code>floor</code> function to get the nearest integer texel coordinates.</li>
 <li>Clamp the coordinates to <code>width(height)-1</code> to ensure they don’t exceed the texture boundaries.</li>
-<li><strong>Bilinear Sampling</strong> (<code>sample_bilinear</code>)</li>
 </ol>
+</li>
+<li>
+<p><strong>Bilinear Sampling</strong> (<code>sample_bilinear</code>)</p>
 <p>Bilinear sampling smooths out the texture by considering the 4 closest texels around the sample point and computing a distance-weighted average of their colors.</p>
 <ol>
 <li>Map the UV coordinates to the texture space: Because texel colors are technically sampled at the center of each pixel (e.g., at <span class="arithmatex">\(0.5, 1.5, 2.5\)</span>), directly finding the surrounding neighbors can be complex. To simplify the computation, we scale the <span class="arithmatex">\((u, v)\)</span> coordinates by the texture's <code>width</code> and <code>height</code>, and then subtract <span class="arithmatex">\(0.5\)</span>. This shifts the coordinate system so we can easily use the <code>floor</code> function to find the texel.</li>

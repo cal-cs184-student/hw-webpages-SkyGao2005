@@ -829,7 +829,10 @@
 <p><strong>Calculating the Mipmap Level</strong> (<code>Texture::get_level</code>)</p>
 <p>Once the texture coordinates for the current pixel and its neighbors are known, the finite differences can be used to approximate the partial derivatives:</p>
 <div class="arithmatex">\[
-\frac{du}{dx} \approx u(x+1,y) - u(x,y) \quad  \quad \frac{dv}{dx} \approx v(x+1,y) - v(x,y)\\\frac{du}{dy} \approx u(x,y+1) - u(x,y) \quad  \quad \frac{dv}{dy} \approx v(x,y+1) - v(x,y)
+\frac{du}{dx} \approx u(x+1,y) - u(x,y) \quad  \quad \frac{dv}{dx} \approx v(x+1,y) - v(x,y)
+\]</div>
+<div class="arithmatex">\[
+\frac{du}{dy} \approx u(x,y+1) - u(x,y) \quad  \quad \frac{dv}{dy} \approx v(x,y+1) - v(x,y)
 \]</div>
 <p>Because <span class="arithmatex">\((u, v)\)</span> are normalized coordinates in the <span class="arithmatex">\([0, 1]\)</span> range, I multiplied these differences by the texture's <code>width</code> and <code>height</code> to scale them into texel space.</p>
 <p>To ensure we don't alias in the direction of greatest stretch, I took the maximum of the lengths of the two difference vectors:</p>

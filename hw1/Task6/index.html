@@ -615,7 +615,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#result-screenshot" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -623,11 +628,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -751,7 +751,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#result-screenshot" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -759,11 +764,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -784,7 +784,7 @@
 
 
 
-<h1 id="task-6-level-sampling-with-mipmaps-for-texture-mapping">Task 6: <strong>“Level sampling” with mipmaps for texture mapping</strong></h1>
+<h1 id="task-6-level-sampling-with-mipmaps-for-texture-mapping">Task 6: “Level sampling” with mipmaps for texture mapping</h1>
 <h2 id="explaining-level-sampling">Explaining Level Sampling</h2>
 <p>Level sampling is an antialiasing technique used in texture mapping to solve the problem of minification—when a texture is applied to an object that appears much smaller on the screen than the texture's native resolution. Without level sampling, sampling a high-frequency texture across a small number of pixels leads to severe aliasing artifacts due to the Nyquist theorem (moiré patterns).</p>
 <p>Level sampling addresses this by precomputing a pyramid of progressively downsampled versions of the texture called mipmaps. If a pixel covers a large area of the texture, we sample from a higher, lower-resolution mipmap level. This ensures that the texture frequency roughly matches the sampling frequency of the pixels, effectively acting as a low-pass filter to eliminate high-frequency noise.</p>
@@ -905,9 +905,9 @@ D = \log_2(\max(L, 1.0))
 <li><strong>Level Sampling:</strong> Mipmapping directly solves minification aliasing. By sampling from lower-resolution textures, it eliminates moiré patterns perfectly. However, it does not fix jagged polygon edges.</li>
 <li><strong>Supersampling:</strong> It fixes both texture aliasing and geometric edge jaggies, but at a massive cost to both speed and memory.</li>
 </ul>
-<h3 id="result-screenshot">Result Screenshot</h3>
-<p><img alt="Task6-0-n.png" src="../images/Task6/Task6-0-n.png" style="width: 45%;" /><img alt="Task6-n-n.png" src="../images/Task6/Task6-n-n.png" style="width: 45%;" /></p>
-<p><img alt="Task6-0-b.png" src="../images/Task6/Task6-0-b.png" style="width: 45%;" /><img alt="Task6-n-b.png" src="../images/Task6/Task6-n-b.png" style="width: 45%;" /></p>
+<h2 id="result-screenshot">Result Screenshot</h2>
+<p><img alt="Task6-0-n.png" src="../images/Task6/Task6-0-n.png" style="width: 45%;" /><img alt="Task6-0-b.png" src="../images/Task6/Task6-0-b.png" style="width: 45%;" /></p>
+<p><img alt="Task6-n-n.png" src="../images/Task6/Task6-n-n.png" style="width: 45%;" /><img alt="Task6-n-b.png" src="../images/Task6/Task6-n-b.png" style="width: 45%;" /></p>
 <p>The screenshots above are images of the checkerboard I generated.</p>
 <ul>
 <li><code>L_ZERO</code> and <code>P_NEAREST</code>: Without any filtering, this produces the worst result. The foreground pixels look blocky, while the distant parts of the grid collapse into moiré pattern.</li>

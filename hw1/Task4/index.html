@@ -652,8 +652,8 @@ P = \alpha A + \beta B + \gamma C
 \alpha = \frac{L_1}{L_0 + L_1 + L_2},\beta = \frac{L_2}{L_0 + L_1 + L_2},\gamma = \frac{L_0}{L_0 + L_1 + L_2}
 \]</div>
 <h2 id="precision-issue">Precision Issue</h2>
-<p>After the first implementation, an artifact appeared: A white line would render along the shared edges of triangles. This was identified as a floating-point precision issue where accumulated values drifted, causing points exactly on the edge to evaluate as microscopic numbers and fail the boundary check. To fix this, the edge function accumulator variables were changed from <code>float</code> to <code>double</code>, and an <code>EPSILON = 1e-6</code> tolerance was added to the boundary checks to ensure robust rasterization without dropping edge pixels.</p>
 <p><img alt="Task4.2.png" src="../images/Task4/Task4.2.png" style="width: 45%;" /></p>
+<p>After the first implementation, an artifact appeared: A white line would render along the shared edges of triangles. This was identified as a floating-point precision issue where accumulated values drifted, causing points exactly on the edge to evaluate as microscopic numbers and fail the boundary check. To fix this, the edge function accumulator variables were changed from <code>float</code> to <code>double</code>, and an <code>EPSILON = 1e-6</code> tolerance was added to the boundary checks to ensure robust rasterization without dropping edge pixels.</p>
 <h2 id="result-screenshot">Result Screenshot</h2>
 <p><img alt="Task4.3.png" src="../images/Task4/Task4.3.png" style="width: 45%;" /></p>
 <p><code>test7.svg</code>: This test shows the barycentric interpolation working flawlessly, producing a smoothly blended color wheel.</p>

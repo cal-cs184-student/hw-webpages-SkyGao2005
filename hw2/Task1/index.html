@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#homework-2-write-up" class="md-skip">
+        <a href="#part-1-bezier-curves-with-1d-de-casteljau-subdivision" class="md-skip">
           Skip to content
         </a>
       
@@ -622,6 +622,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 1
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -638,6 +656,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#de-casteljaus-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        de Casteljau's Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Details
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#result-screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modified-bezier-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modified Bezier Curve
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -671,6 +752,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#de-casteljaus-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        de Casteljau's Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Details
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#result-screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modified-bezier-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modified Bezier Curve
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -686,16 +819,13 @@
 
 
 
-<h1 id="homework-2-write-up">Homework 2 Write-Up</h1>
-<p>分类: Write-Up</p>
 <h1 id="part-1-bezier-curves-with-1d-de-casteljau-subdivision">Part 1: <strong>Bezier Curves with 1D de Casteljau Subdivision</strong></h1>
 <h2 id="de-casteljaus-algorithm">de Casteljau's Algorithm</h2>
-<hr />
 <p>Instead of calculating the complex polynomial equation directly, de Casteljau's Algorithm uses repeated linear interpolation to find a specific point on the curve for a given parameter <span class="arithmatex">\(t\)</span>, where <span class="arithmatex">\(t \in [0, 1]\)</span>.</p>
 <p>We start with <span class="arithmatex">\(n\)</span> initial control points: <span class="arithmatex">\(P_0, P_1, P_2, \dots, P_{n-1}\)</span>. For every two adjacent control points <span class="arithmatex">\(P_i\)</span> and <span class="arithmatex">\(P_{i+1}\)</span>, we find a new point <span class="arithmatex">\(P'_i\)</span> between them using the parameter <span class="arithmatex">\(t\)</span>. The mathematical formula for this is: <span class="arithmatex">\(P'_i = (1 - t)P_i + tP_{i+1}\)</span></p>
 <p>After one full step of interpolation, we get a new set of <span class="arithmatex">\(n-1\)</span> points. We repeat this exact same process on the new set of points.</p>
 <p>Eventually, we stop the recursion when we are left with exactly one single point. This final point is guaranteed to lie on the Bezier curve at the specified parameter <span class="arithmatex">\(t\)</span>.</p>
-<h3 id="implementation-details">Implementation Details</h3>
+<h2 id="implementation-details">Implementation Details</h2>
 <p>First, I implemented the helper function <code>lerp()</code>. The function simply takes two <code>Vector2D</code> points and the double <code>t</code>, and returns the newly interpolated <code>Vector2D</code> point <span class="arithmatex">\((1 - t)P_0 + tP_1\)</span>.</p>
 <p>Next, I implemented the <code>evaluateStep()</code> function. This function is responsible for calculating one single recursive step of the algorithm.</p>
 <ul>
@@ -703,16 +833,13 @@
 <li>I iterate through the given points, call <code>lerp(points[i], points[i + 1], t)</code> to interpolate between the current point and the next point, using the class member variable <code>t</code>. The resulting point is pushed into the <code>result</code> vector.</li>
 <li>Finally, the function returns the <code>result</code> vector, which now contains one less point than the input vector, completing next level of subdivision.</li>
 </ul>
-<hr />
-<h3 id="3-custom-bezier-curve-evaluation-steps-6-control-points">3. Custom Bezier Curve Evaluation Steps (6 Control Points)</h3>
+<h2 id="result-screenshot">Result Screenshot</h2>
 <p>Below are the screenshots stepping through the evaluation of a custom Bezier curve defined by 6 control points.</p>
 <p><img alt="SCR-20260302-obxd.png" src="../images/Task1/SCR-20260302-obxd.png" style="width: 32%;" /><img alt="SCR-20260302-obzq.png" src="../images/Task1/SCR-20260302-obzq.png" style="width: 32%;" /><img alt="SCR-20260302-obyn.png" src="../images/Task1/SCR-20260302-obyn.png" style="width: 32%;" /></p>
 <p><img alt="SCR-20260302-ocan.png" src="../images/Task1/SCR-20260302-ocan.png" style="width: 32%;" /><img alt="SCR-20260302-obzb.png" src="../images/Task1/SCR-20260302-obzb.png" style="width: 32%;" /><img alt="SCR-20260302-ocbj.png" src="../images/Task1/SCR-20260302-ocbj.png" style="width: 32%;" /></p>
-<hr />
-<h3 id="4-modified-bezier-curve">4. Modified Bezier Curve</h3>
-<p>Below is a screenshot of the same initial setup, but I have manually moved some of the original control points to change the shape of the curve, and I scrolled the mouse wheel to shift the parameter <span class="arithmatex">\(t\)</span> to a different value.</p>
+<h2 id="modified-bezier-curve">Modified Bezier Curve</h2>
+<p>Below is screenshots of the same initial setup, but I have manually moved some of the original control points to change the shape of the curve, and I scrolled the mouse wheel to shift the parameter <span class="arithmatex">\(t\)</span> to a different value.</p>
 <p><img alt="SCR-20260303-bqfr.png" src="../images/Task1/SCR-20260303-bqfr.png" style="width: 45%;" /><img alt="test.gif" src="../images/Task1/test.gif" style="width: 45%;" /></p>
-<hr />
 
 
 

@@ -14,6 +14,8 @@
         <link rel="prev" href="../Task2/">
       
       
+        <link rel="next" href="../Task4/">
+      
       
         
       
@@ -770,6 +772,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -853,7 +883,7 @@
 
 
 
-<h1 id="part-3-area-weighted-vertex-normals">Part 3: <strong>Area-Weighted Vertex Normals</strong></h1>
+<h1 id="part-3-area-weighted-vertex-normals">Part 3: Area-Weighted Vertex Normals</h1>
 <h2 id="algorithm">Algorithm</h2>
 <p>To implement Phong shading, we need to calculate the area-weighted normal at each vertex. Phong shading uses vertex normals to smoothly interpolate lighting across the surface. To calculate the area-weighted normal for a specific vertex, we need to find the normals of all the triangles connected to that vertex, scale each face normal by the area of that face, add them all together, and finally normalize the result.</p>
 <ol>

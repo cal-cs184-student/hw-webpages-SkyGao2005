@@ -14,6 +14,8 @@
         <link rel="prev" href="../Task3/">
       
       
+        <link rel="next" href="../Task5/">
+      
       
         
       
@@ -771,7 +773,7 @@
   <a href="#implementation-tricks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation tricks
+        Implementation Tricks
       
     </span>
   </a>
@@ -793,6 +795,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -846,7 +876,7 @@
   <a href="#implementation-tricks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation tricks
+        Implementation Tricks
       
     </span>
   </a>
@@ -898,8 +928,8 @@
 <li>
 <p>Next, I reassigned the pointers to form the new geometry:</p>
 <ul>
-<li>Face <span class="arithmatex">\(f_0\)</span> becomes triangle <span class="arithmatex">\((a, d, c)\)</span>. Its new half-edge loop is: <span class="arithmatex">\(h_0(a \rightarrow d) \rightarrow h_5(d \rightarrow c) \rightarrow h_1(c \rightarrow a)\)</span>.</li>
-<li>Face <span class="arithmatex">\(f_1\)</span> becomes triangle <span class="arithmatex">\((d, a, b)\)</span>. Its new half-edge loop is: <span class="arithmatex">\(h_3(d \rightarrow a) \rightarrow h_2(a \rightarrow b) \rightarrow h_4(b \rightarrow d)\)</span>.</li>
+<li><strong>Face</strong> <span class="arithmatex">\(f_0\)</span> becomes triangle <span class="arithmatex">\((a, d, c)\)</span>. Its new half-edge loop is: <span class="arithmatex">\(h_0(a \rightarrow d) \rightarrow h_5(d \rightarrow c) \rightarrow h_1(c \rightarrow a)\)</span>.</li>
+<li><strong>Face</strong> <span class="arithmatex">\(f_1\)</span> becomes triangle <span class="arithmatex">\((d, a, b)\)</span>. Its new half-edge loop is: <span class="arithmatex">\(h_3(d \rightarrow a) \rightarrow h_2(a \rightarrow b) \rightarrow h_4(b \rightarrow d)\)</span>.</li>
 </ul>
 <p>I used the <code>setNeighbors(next, twin, vertex, edge, face)</code> function to update all 5 pointers for each of the 6 inner half-edges at once.</p>
 <p><strong>Unchanged Elements:</strong> The <code>twin</code> pointers for <span class="arithmatex">\(h_1, h_2, h_4, h_5\)</span> remain exactly the same, because their connections to the outside triangles are not affected by the local flip.</p>
@@ -908,7 +938,7 @@
 <p>Finally, to ensure total consistency, update every vertex, edge, and face pointers back to a valid half-edge that belongs to it.</p>
 </li>
 </ol>
-<h2 id="implementation-tricks">Implementation tricks</h2>
+<h2 id="implementation-tricks">Implementation Tricks</h2>
 <p>For this part, I did not experience a difficult debugging journey. My main trick was doing all the work on scratch paper before typing any code.</p>
 <p>By drawing out the two triangles(like the graph above), explicitly labeling every single half-edge, vertex, edge, and face with variable names, and mapping out their relationships before and after the flip, I avoided confusion. Translating this visual diagram into the <code>setNeighbors</code> calls made the code work correctly on the first try.</p>
 <h2 id="result-screenshot">Result Screenshot</h2>

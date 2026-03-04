@@ -1,0 +1,1416 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cal-cs184-student.github.io/hw-webpages-SkyGao2005/hw2/Task6/">
+      
+      
+        <link rel="prev" href="../Task5/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Part 6 - Gao Fei's CS184 Homework Webpage</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#part-6-loop-subdivision-for-mesh-upsampling" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gao Fei&#39;s CS184 Homework Webpage" class="md-header__button md-logo" aria-label="Gao Fei's CS184 Homework Webpage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gao Fei's CS184 Homework Webpage
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part 6
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hw1/Overview/" class="md-tabs__link">
+          
+  
+  
+  Homework 1
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Task1/" class="md-tabs__link">
+          
+  
+  
+  Homework 2
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Gao Fei&#39;s CS184 Homework Webpage" class="md-nav__button md-logo" aria-label="Gao Fei's CS184 Homework Webpage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Gao Fei's CS184 Homework Webpage
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homework 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Homework 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw1/Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw1/Task1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw1/Task2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw1/Task3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw1/Task4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw1/Task5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw1/Task6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homework 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Homework 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 6
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Detail
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharp-corners-and-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sharp Corners and Edges
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sharp Corners and Edges">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preserving-sharpness-via-pre-splitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preserving Sharpness via Pre-splitting:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cube-asymmetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cube Asymmetry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cube Asymmetry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-processing-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-processing Solution:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-credit-supporting-meshes-with-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extra Credit: Supporting Meshes with Boundaries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extra Credit: Supporting Meshes with Boundaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boundary-vertex-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary Vertex Update
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boundary-edge-midpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary Edge Midpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-credit-additional-subdivision-schemes-modified-butterfly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extra Credit: Additional Subdivision Schemes-Modified Butterfly
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extra Credit: Additional Subdivision Schemes-Modified Butterfly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-detail_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Detail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#original-vertex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Original Vertex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-midpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Midpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Detail
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharp-corners-and-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sharp Corners and Edges
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sharp Corners and Edges">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preserving-sharpness-via-pre-splitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preserving Sharpness via Pre-splitting:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cube-asymmetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cube Asymmetry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cube Asymmetry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-processing-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-processing Solution:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-credit-supporting-meshes-with-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extra Credit: Supporting Meshes with Boundaries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extra Credit: Supporting Meshes with Boundaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boundary-vertex-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary Vertex Update
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boundary-edge-midpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary Edge Midpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-credit-additional-subdivision-schemes-modified-butterfly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extra Credit: Additional Subdivision Schemes-Modified Butterfly
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extra Credit: Additional Subdivision Schemes-Modified Butterfly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-detail_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Detail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#original-vertex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Original Vertex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-midpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Midpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="part-6-loop-subdivision-for-mesh-upsampling">Part 6: Loop Subdivision for Mesh Upsampling</h1>
+<h2 id="implementation-detail">Implementation Detail</h2>
+<p>I implemented the Loop subdivision algorithm using the recommended process. The core idea is to pre-compute all new vertex positions on the original coarse mesh, perform edge splits and flips, and finally update the vertex positions. </p>
+<ol>
+<li>
+<p>For every original vertex in the mesh, we calculate its new position using the Loop subdivision weighted average formula:</p>
+<div class="arithmatex">\[
+v_{new} = (1 - n \cdot u) \cdot v_{old} + u \cdot \sum v_{neighbor}
+\]</div>
+<p>Here, <span class="arithmatex">\(n\)</span> is the degree of the vertex. The weighting factor <span class="arithmatex">\(u\)</span> is defined as <span class="arithmatex">\(u = \frac{3}{16}\)</span> if <span class="arithmatex">\(n = 3\)</span>, and <span class="arithmatex">\(u = \frac{3}{8n}\)</span> for all other cases.</p>
+<p>I iterated through the neighborhood of each vertex using <code>h = h-&gt;twin()-&gt;next()</code>. During iteration, I accumulated the positions of the neighboring vertices and counted the degree. The result is stored in <code>v-&gt;newPosition</code>, and the vertex is flagged with <code>v-&gt;isNew = false</code>.</p>
+</li>
+<li>
+<p>For every original edge, we compute the position of the new vertex that will be inserted at its midpoint. We can identify the two endpoints of the edge (<span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>) and the opposite vertices in the two adjacent triangles (<span class="arithmatex">\(C\)</span> and <span class="arithmatex">\(D\)</span>). The formula used is:</p>
+<div class="arithmatex">\[
+e_{new} = \frac{3}{8}(A + B) + \frac{1}{8}(C + D)
+\]</div>
+<p>This calculated position is temporarily stored in <code>e-&gt;newPosition</code>, and the edge is marked with <code>e-&gt;isNew = false</code>.</p>
+</li>
+<li>
+<p>To prevent the iterator from processing newly created edges, I first collected all original edges into a <code>vector</code>. Then, I iterated through this vector and called <code>splitEdge()</code> on each. The newly returned vertex <span class="arithmatex">\(m\)</span> is marked as <code>m-&gt;isNew = true</code>, and its position is assigned the pre-computed <code>e-&gt;newPosition</code>. </p>
+<p>Finally, I traversed the four edges surrounding <span class="arithmatex">\(m\)</span> to flag them: the two edges making up the original edge remain <code>isNew = false</code>, while the two cross edges connecting to the opposite old vertices are marked <code>isNew = true</code>.</p>
+</li>
+<li>
+<p>I iterated over all edges and flipped any edge that met two conditions: it must be a newly created edge (<code>isNew == true</code>), and it must connect one old vertex and one new vertex.</p>
+</li>
+<li>Lastly, I iterated over all vertices in the new mesh and copied the data from <code>newPosition</code> to the <code>position</code>.</li>
+</ol>
+<h2 id="sharp-corners-and-edges">Sharp Corners and Edges</h2>
+<h3 id="default-behavior">Default Behavior</h3>
+<p><img alt="Task6.1.png" src="../images/Task6/Task6.1.png" style="width: 45%;" /><img alt="Task6.2.png" src="../images/Task6/Task6.2.png" style="width: 45%;" /></p>
+<p><img alt="Task6.3.png" src="../images/Task6/Task6.3.png" style="width: 45%;" /><img alt="Task6.4.png" src="../images/Task6/Task6.4.png" style="width: 45%;" /></p>
+<p>When Loop subdivision is applied to a cube, the sharp 90-degree corners and straight edges are heavily smoothed out. After several iterations, the cube loses its geometric sharpness entirely.</p>
+<p>In the algorithm, each vertex's new position is calculated as a weighted average of its one-ring neighbors. For vertices at sharp corners, the weighted average forcefully pulls the corner vertex inward, collapsing the sharp feature.</p>
+<h3 id="preserving-sharpness-via-pre-splitting">Preserving Sharpness via Pre-splitting:</h3>
+<p><img alt="Task6.5.png" src="../images/Task6/Task6.5.png" style="width: 45%;" /><img alt="Task6.6.png" src="../images/Task6/Task6.6.png" style="width: 45%;" /></p>
+<p><img alt="Task6.7.png" src="../images/Task6/Task6.7.png" style="width: 45%;" /><img alt="Task6.8.png" src="../images/Task6/Task6.8.png" style="width: 45%;" /></p>
+<p>To reduce this smoothing effect and preserve sharp corners, we can manually pre-split the edges surrounding the feature before applying subdivision.</p>
+<p>In the first image, multiple edge splits were performed iteratively on the edges converging at a single front corner of the cube. When the weighted average is calculated, the corner vertex is only pulled toward these close neighbors rather than being pulled toward the distant center of the original faces. As a result, the pre-split corner successfully resists the smoothing effect and remains a sharp point. The rest of the unmodified cube smooths away.</p>
+<h2 id="cube-asymmetry">Cube Asymmetry</h2>
+<p>When loading default cube model and performing several iterations of Loop subdivision, the cube becomes slightly asymmetric. This happens because the starting topology of the cube is asymmetric. </p>
+<p>Each square face is constructed using two triangles divided by a single diagonal edge. Loop subdivision updates vertex positions based on their vertex degree. Because these diagonals are oriented in a specific direction, vertices have uneven degrees, so the weighted average pulls the geometry more strongly along the direction of the diagonals.</p>
+<h3 id="pre-processing-solution">Pre-processing Solution:</h3>
+<p><img alt="Task6.9.png" src="../images/Task6/Task6.9.png" style="width: 45%;" /><img alt="Task6.10.png" src="../images/Task6/Task6.10.png" style="width: 45%;" /></p>
+<p><img alt="Task6.11.png" src="../images/Task6/Task6.11.png" style="width: 45%;" /><img alt="Task6.12.png" src="../images/Task6/Task6.12.png" style="width: 45%;" /></p>
+<p>To make the cube subdivide symmetrically, we need to make its initial topology symmetric. Before subdividing, I split the diagonal edge on every face of the cube so that each square face is made up of four symmetric triangles.</p>
+<p>With this pre-processing, every corner vertex of the cube has the same degree. When Loop subdivision is applied, the weights are distributed evenly in all directions, causing the cube to smooth into a perfectly symmetric shape.</p>
+<h2 id="extra-credit-supporting-meshes-with-boundaries">Extra Credit: Supporting Meshes with Boundaries</h2>
+<p><img alt="Task6.13.png" src="../images/Task6/Task6.13.png" style="width: 33%;" /><img alt="Task6.14.png" src="../images/Task6/Task6.14.png" style="width: 33%;" /><img alt="Task6.15.png" src="../images/Task6/Task6.15.png" style="width: 33%;" /></p>
+<p>To support meshes with boundaries, the splits and flips operations remain identical, but the position calculations in Steps 1 and 2 require a different logic.</p>
+<h3 id="boundary-vertex-update">Boundary Vertex Update</h3>
+<p>For old vertices on a boundary, the standard one-ring neighborhood formula would cause the boundary to shrink aggressively. Instead, we use a cubic B-spline rule. A boundary vertex connects to exactly two other boundary vertices (<span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>). The new position is calculated as:</p>
+<div class="arithmatex">\[
+v_{new} = \frac{1}{8}(A + B) + \frac{3}{4} \cdot v_{old}
+\]</div>
+<h3 id="boundary-edge-midpoint">Boundary Edge Midpoint</h3>
+<p>For boundary edges, there are no opposite vertices <span class="arithmatex">\(C\)</span> and <span class="arithmatex">\(D\)</span> because the edge only borders a single interior triangle. Therefore, the new vertex position simply becomes the exact midpoint of the boundary edge:</p>
+<div class="arithmatex">\[
+e_{new} = \frac{1}{2}(A + B)
+\]</div>
+<h3 id="result">Result</h3>
+<p>This ensures that the boundary curves smooth out naturally without collapsing inward.</p>
+<p><img alt="Task6.16.png" src="../images/Task6/Task6.16.png" style="width: 33%;" /><img alt="Task6.17.png" src="../images/Task6/Task6.17.png" style="width: 33%;" /><img alt="Task6.18.png" src="../images/Task6/Task6.18.png" style="width: 33%;" /></p>
+<h2 id="extra-credit-additional-subdivision-schemes-modified-butterfly">Extra Credit: Additional Subdivision Schemes-Modified Butterfly</h2>
+<h3 id="implementation-detail_1">Implementation Detail</h3>
+<p>The Modified Butterfly scheme is an interpolating scheme, whereas Loop is an approximating scheme. This means that in the Butterfly scheme, the positions of the original vertices are preserved.</p>
+<p>The implementation is identical to Loop subdivision, but Steps 1 and 2 use different calculations.</p>
+<h3 id="original-vertex">Original Vertex</h3>
+<p>The Modified Butterfly implementation simply copies the original positions directly: <code>v-&gt;newPosition = v-&gt;position</code>.</p>
+<h3 id="new-midpoint">New Midpoint</h3>
+<p>The formula changes depending on the degree of the edge's endpoints:</p>
+<ul>
+<li><strong>Regular Edges:</strong> If both endpoints of an interior edge are regular (<span class="arithmatex">\(K = 6\)</span>), we use the standard 8-point butterfly stencil. The new position is calculated using the endpoints <span class="arithmatex">\((p, q)\)</span>, the opposite vertices in the adjacent triangles <span class="arithmatex">\((c_1, c_2)\)</span>, and the four wing vertices <span class="arithmatex">\((w_1, w_2, w_3, w_4)\)</span> that form the extended neighborhood:</li>
+</ul>
+<div class="arithmatex">\[
+e_{new} = \frac{1}{2}(p + q) + \frac{1}{8}(c_1 + c_2) - \frac{1}{16}(w_1 + w_2 + w_3 + w_4)
+\]</div>
+<ul>
+<li>
+<p><strong>Extraordinary Vertices:</strong> For an extraordinary vertex <span class="arithmatex">\(v\)</span> (<span class="arithmatex">\(K \neq 6\)</span>), we calculate a weighted sum of its 1-ring neighbors.</p>
+<ul>
+<li>For <span class="arithmatex">\(K=3\)</span>:   <span class="arithmatex">\(s_0 = \frac{5}{12}, \quad s_1 = s_2 = -\frac{1}{12}\)</span></li>
+<li>For <span class="arithmatex">\(K=4\)</span>:   <span class="arithmatex">\(s_0 = \frac{3}{8}, \quad s_1 = s_3 = 0, \quad s_2 = -\frac{1}{8}\)</span></li>
+<li>
+<p>For <span class="arithmatex">\(K \geq 5\)</span>, the weights are calculated using trigonometric functions:</p>
+<div class="arithmatex">\[
+s_j = \frac{1}{K} \left( \frac{1}{4} + \cos\left(\frac{2\pi j}{K}\right) + \frac{1}{2} \cos\left(\frac{4\pi j}{K}\right) \right)
+\]</div>
+</li>
+</ul>
+<p>The new vertex position is then: <span class="arithmatex">\(\frac{3}{4} v + \sum s_j \cdot neighbor_j\)</span>.</p>
+</li>
+<li>
+<p><strong>Boundary Edges:</strong> For boundary edges, we use the two endpoints <span class="arithmatex">\((p, q)\)</span> and their respective outer boundary neighbors <span class="arithmatex">\((a, d)\)</span>:</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+e_{new} = -\frac{1}{16}a + \frac{9}{16}p + \frac{9}{16}q - \frac{1}{16}d
+\]</div>
+<h3 id="result_1">Result</h3>
+<p><img alt="SCR-20260304-dqkc.png" src="../images/Task6/SCR-20260304-dqkc.png" style="width: 33%;" /><img alt="SCR-20260304-dqln.png" src="../images/Task6/SCR-20260304-dqln.png" style="width: 33%;" /><img alt="SCR-20260304-dqqj.png" src="../images/Task6/SCR-20260304-dqqj.png" style="width: 33%;" /></p>
+<p>Because the Modified Butterfly is an interpolating scheme, the mesh does not shrink inward the way it does with Loop subdivision. Instead, it bulges slightly outward between the original control points to create a smooth surface.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

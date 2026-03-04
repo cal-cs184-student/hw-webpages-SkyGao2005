@@ -14,6 +14,8 @@
         <link rel="prev" href="../Task4/">
       
       
+        <link rel="next" href="../Task6/">
+      
       
         
       
@@ -854,6 +856,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -967,8 +997,7 @@
 
 <h1 id="part-5-edge-split">Part 5: Edge Split</h1>
 <h2 id="implementation-detail">Implementation Detail</h2>
-<p>I implemented the edge split operation by tracking and reassigning pointers for all affected mesh elements. To manage the complexity, I first drew diagrams of the mesh before and after the split to label every vertex, edge, face, and halfedge.</p>
-<p>My strategy was to allocate the exact number of new elements required, calculate the new vertex position, and then use the <code>setNeighbors</code> function to systematically update the pointers for every halfedge in the local neighborhood.</p>
+<p>I implemented the edge split operation by tracking and reassigning pointers for all affected mesh elements. To manage the complexity, I first drew diagrams of the mesh before and after the split to label every vertex, edge, face, and half-edge.</p>
 <h3 id="non-boundary-edge-split">Non-Boundary Edge Split</h3>
 <p><img alt="nonbound-split.png" src="../images/Task5/nonbound-split.png" /></p>
 <ol>

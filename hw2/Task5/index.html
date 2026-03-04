@@ -224,7 +224,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../Task1/" class="md-tabs__link">
+        <a href="../Overview/" class="md-tabs__link">
           
   
   
@@ -607,6 +607,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1001,7 +1029,7 @@
 <h3 id="non-boundary-edge-split">Non-Boundary Edge Split</h3>
 <p><img alt="nonbound-split.png" src="../images/Task5/nonbound-split.png" /></p>
 <ol>
-<li>Like Part 4, I first iterate through the mesh starting from <code>e0</code>'s half-edge and use the <code>next</code> pointers to collect every single element in the two triangles. </li>
+<li>Like <a href="../Task4/">Part4</a>, I first iterate through the mesh starting from <code>e0</code>'s half-edge and use the <code>next</code> pointers to collect every single element in the two triangles. </li>
 <li>In summary, the split operation creates <span class="arithmatex">\(1\)</span> new vertex <span class="arithmatex">\(m\)</span>, <span class="arithmatex">\(3\)</span> new edges, <span class="arithmatex">\(2\)</span> new faces, and <span class="arithmatex">\(6\)</span> new half-edges. The position of the new vertex <span class="arithmatex">\(m\)</span> is set to the midpoint of the original edge: <span class="arithmatex">\(m = \frac{b + c}{2}\)</span></li>
 <li>After creating the new elements, I established four triangle loops by reassigning pointers:<ul>
 <li><strong>Face <span class="arithmatex">\(f_0\)</span></strong>: triangle <span class="arithmatex">\((b, m, a)\)</span>. Its half-edge loop is: <span class="arithmatex">\(h_0(b \rightarrow m) \rightarrow h_9(m \rightarrow a) \rightarrow h_2(a \rightarrow b)\)</span>.</li>
@@ -1027,7 +1055,7 @@
 </li>
 </ul>
 <h2 id="implementation-tricks">Implementation Tricks</h2>
-<p>My debugging journey was relatively smooth—I only encountered some basic errors, like typos.. I avoided major bugs by treating this part similarly to Part 4. Before writing any code, I drew the "before" and "after" states of the triangles on scratch paper. I labeled every variable and mapped out the exact pointer relationships. Translating this physical diagram directly into code ensured that I did not lose track of any pointers.</p>
+<p>My debugging journey was relatively smooth—I only encountered some basic errors, like typos.. I avoided major bugs by treating this part similarly to <a href="../Task4/">Part4</a>. Before writing any code, I drew the "before" and "after" states of the triangles on scratch paper. I labeled every variable and mapped out the exact pointer relationships. Translating this physical diagram directly into code ensured that I did not lose track of any pointers.</p>
 <h2 id="result-screenshot">Result Screenshot</h2>
 <p>Basic Edge Splits</p>
 <p><img alt="Task5.1.png" src="../images/Task5/Task5.1.png" style="width: 45%;" /><img alt="Task5.2.png" src="../images/Task5/Task5.2.png" style="width: 45%;" /></p>

@@ -1108,37 +1108,40 @@
 <p>Next, we use <code>std::partition</code> to divide the primitives based on the split point. Primitives with a centroid coordinate less than the split point are partitioned to the left side, and the rest to the right. To prevent infinite recursion in edge cases where all primitives cluster on one side (i.e., <code>mid == start</code> or <code>mid == end</code>), we explicitly force the array to split in the middle: <code>mid = start + count / 2</code>. </p>
 <p>Finally, we recursively call <code>construct_bvh</code> to build the left (<code>node-&gt;l</code>) and right (<code>node-&gt;r</code>) child nodes.</p>
 <h2 id="large-dae-files">Large <code>.dae</code> files</h2>
-<figure>
-  <img alt="Part2.1.png" src="../images/Task2/Part2.1.png" style="width: 33%;" />
-<br />
-<figcaption>maxplanck.dae</figcaption>
-</figure>
-<figure>
-  <img alt="Part2.2.png" src="../images/Task2/Part2.2.png" style="width: 33%;" />
-<br />
-<figcaption>CBlucy.dae</figcaption>
-</figure>
+<div style="display: flex; justify-content: center; gap: 2%;">
+  <figure markdown="span" style="width: 33%;">
+    ![Part2.1.png](images/Task2/Part2.1.png)
+    <figcaption>maxplanck.dae</figcaption>
+  </figure>
+
+  <figure markdown="span" style="width: 33%;">
+    ![Part2.2.png](images/Task2/Part2.2.png)
+    <figcaption>CBlucy.dae</figcaption>
+  </figure>
+</div>
+
 <h2 id="performance-analysis">Performance Analysis</h2>
-<figure>
-  <img alt="Part2.6.png" src="../images/Task2/Part2.6.png" style="width: 23%;" />
-<br />
-<figcaption>cow.dae</figcaption>
-</figure>
-<figure>
-  <img alt="Part2.4.png" src="../images/Task2/Part2.4.png" style="width: 23%;" />
-<br />
-<figcaption>CBcoil.dae</figcaption>
-</figure>
-<figure>
-  <img alt="Part2.3.png" src="../images/Task2/Part2.3.png" style="width: 23%;" />
-<br />
-<figcaption>CBbunny.dae</figcaption>
-</figure>
-<figure>
-  <img alt="Part2.5.png" src="../images/Task2/Part2.5.png" style="width: 23%;" />
-<br />
-<figcaption>CBdragon.dae</figcaption>
-</figure>
+<div style="display: flex; justify-content: center; gap: 1%; margin-top: 20px;">
+  <figure markdown="span" style="width: 23%;">
+    ![Part2.6.png](images/Task2/Part2.6.png)
+    <figcaption>cow.dae</figcaption>
+  </figure>
+
+  <figure markdown="span" style="width: 23%;">
+    ![Part2.4.png](images/Task2/Part2.4.png)
+    <figcaption>CBcoil.dae</figcaption>
+  </figure>
+
+  <figure markdown="span" style="width: 23%;">
+    ![Part2.3.png](images/Task2/Part2.3.png)
+    <figcaption>CBbunny.dae</figcaption>
+  </figure>
+
+  <figure markdown="span" style="width: 23%;">
+    ![Part2.5.png](images/Task2/Part2.5.png)
+    <figcaption>CBdragon.dae</figcaption>
+  </figure>
+</div>
 <p>Implementing BVH acceleration provides massive performance improvements. Without a BVH tree, the ray tracer tests every ray against every primitive, resulting in <span class="arithmatex">\(O(N)\)</span> time complexity per ray. By organizing primitives into a BVH tree, we reduce the intersection testing time complexity to roughly <span class="arithmatex">\(O(\log N)\)</span>.</p>
 <table>
 <thead>

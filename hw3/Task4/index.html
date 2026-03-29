@@ -1321,14 +1321,40 @@ L_{out} = L_{out} + \frac{L_{\text{indirect}} \cdot f \cdot \cos(\theta)}{\text{
 </div>
 <h2 id="m-th-bounce-of-light"><span class="arithmatex">\(m\)</span>-th Bounce of Light</h2>
 <div style="overflow-x: auto;">
-
-| isAccumBounces | $m=0$ | $m=1$ | $m=2$ | $m=3$ | $m=4$ | $m=5$ |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **True** | ![m=0](images/Task4/Part4.3.0.png) | ![m=1](images/Task4/Part4.3.1.png) | ![m=2](images/Task4/Part4.3.2.png) | ![m=3](images/Task4/Part4.3.3.png) | ![m=4](images/Task4/Part4.3.4.png) | ![m=5](images/Task4/Part4.3.5.png) |
-| **False** | ![m=0](images/Task4/Part4.3.6.png) | ![m=1](images/Task4/Part4.3.7.png) | ![m=2](images/Task4/Part4.3.8.png) | ![m=3](images/Task4/Part4.3.9.png) | ![m=4](images/Task4/Part4.3.10.png) | ![m=5](images/Task4/Part4.3.11.png) |
-
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">isAccumBounces</th>
+<th style="text-align: center;"><span class="arithmatex">\(m=0\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(m=1\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(m=2\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(m=3\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(m=4\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(m=5\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>True</strong></td>
+<td style="text-align: center;"><img alt="m=0" src="../images/Task4/Part4.3.0.png" /></td>
+<td style="text-align: center;"><img alt="m=1" src="../images/Task4/Part4.3.1.png" /></td>
+<td style="text-align: center;"><img alt="m=2" src="../images/Task4/Part4.3.2.png" /></td>
+<td style="text-align: center;"><img alt="m=3" src="../images/Task4/Part4.3.3.png" /></td>
+<td style="text-align: center;"><img alt="m=4" src="../images/Task4/Part4.3.4.png" /></td>
+<td style="text-align: center;"><img alt="m=5" src="../images/Task4/Part4.3.5.png" /></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>False</strong></td>
+<td style="text-align: center;"><img alt="m=0" src="../images/Task4/Part4.3.6.png" /></td>
+<td style="text-align: center;"><img alt="m=1" src="../images/Task4/Part4.3.7.png" /></td>
+<td style="text-align: center;"><img alt="m=2" src="../images/Task4/Part4.3.8.png" /></td>
+<td style="text-align: center;"><img alt="m=3" src="../images/Task4/Part4.3.9.png" /></td>
+<td style="text-align: center;"><img alt="m=4" src="../images/Task4/Part4.3.10.png" /></td>
+<td style="text-align: center;"><img alt="m=5" src="../images/Task4/Part4.3.11.png" /></td>
+</tr>
+</tbody>
+</table>
 </div>
-
 <h3 id="2nd-and-3rd-bounces-vs-rasterization">2nd and 3rd Bounces vs. Rasterization</h3>
 <p>In the 2nd bounce image, we can clearly see color bleeding. The colored walls reflect light onto the bunny. The black ceiling is now lit by light bouncing from the floor.</p>
 <p>The 3rd bounce is much darker because surfaces absorb light energy. But it still adds soft light to the deep shadows.</p>

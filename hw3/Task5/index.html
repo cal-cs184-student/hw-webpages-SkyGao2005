@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://cal-cs184-student.github.io/hw-webpages-SkyGao2005/hw3/Task1/">
+        <link rel="canonical" href="https://cal-cs184-student.github.io/hw-webpages-SkyGao2005/hw3/Task5/">
       
       
-        <link rel="prev" href="../../hw2/Task6/">
+        <link rel="prev" href="../Task4/">
       
-      
-        <link rel="next" href="../Task2/">
       
       
         
@@ -25,7 +23,7 @@
     
     
       
-        <title>Part 1 - Gao Fei's CS184 Homework Webpage</title>
+        <title>Part 5 - Gao Fei's CS184 Homework Webpage</title>
       
     
     
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#part-1-ray-generation-and-scene-intersection" class="md-skip">
+        <a href="#part-5-adaptive-sampling" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part 1
+              Part 5
             
           </span>
         </div>
@@ -244,7 +242,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../Task1/" class="md-tabs__link">
           
   
   
@@ -887,37 +885,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Part 1
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Task1/" class="md-nav__link">
         
   
   
@@ -933,59 +904,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ray-generation-and-pixel-sampling" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ray Generation and Pixel Sampling
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#triangle-intersection-algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Triangle Intersection Algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#result" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Result
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1079,10 +997,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Task5/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 5
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1098,6 +1043,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adaptive-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptive Sampling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#render-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Render Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1137,10 +1124,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ray-generation-and-pixel-sampling" class="md-nav__link">
+  <a href="#adaptive-sampling" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ray Generation and Pixel Sampling
+        Adaptive Sampling
       
     </span>
   </a>
@@ -1148,21 +1135,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#triangle-intersection-algorithm" class="md-nav__link">
+  <a href="#render-results" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Triangle Intersection Algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#result" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Result
+        Render Results
       
     </span>
   </a>
@@ -1186,44 +1162,43 @@
 
 
 
-<h1 id="part-1-ray-generation-and-scene-intersection">Part 1: Ray Generation and Scene Intersection</h1>
-<h2 id="ray-generation-and-pixel-sampling">Ray Generation and Pixel Sampling</h2>
-<p>The ray generation pipeline maps normalized 2D image coordinates to 3D world-space rays.</p>
-<p>In <code>Camera::generate_ray</code>, we first calculate the size of the virtual camera sensor using the field of view angles: <span class="arithmatex">\(\text{halfW} = \tan(\frac{hFov}{2})\)</span> and <span class="arithmatex">\(\text{halfH} = \tan(\frac{vFov}{2})\)</span>. We then linearly map the input normalized coordinates <span class="arithmatex">\((x, y)\)</span> to the sensor plane coordinates <span class="arithmatex">\((cx, cy)\)</span>.</p>
-<p>Because the camera looks down the <span class="arithmatex">\(-Z\)</span> axis, the direction vector in camera space is <span class="arithmatex">\((cx, cy, -1)\)</span>. We normalize this vector. To transform this direction from camera space to world space, we multiply it by the camera-to-world rotation matrix <code>c2w</code>. Finally, we construct a <code>Ray</code> originating from the camera's position <code>pos</code> and set its valid intersection range using <code>min_t = nClip</code> and <code>max_t = fClip</code> to ignore objects outside the clipping planes.</p>
-<p>In <code>PathTracer::raytrace_pixel</code>, we perform Monte Carlo integration to estimate the radiance of each pixel. We use <code>gridSampler-&gt;get_sample()</code> to generate <code>ns_aa</code> random sample points within the pixel area. For each sample, we generate a ray, calculate its radiance using <code>est_radiance_global_illumination</code>, and add it to a total sum. Finally, we divide the total sum by the number of samples to get the average radiance and update the pixel buffer.</p>
-<h2 id="triangle-intersection-algorithm">Triangle Intersection Algorithm</h2>
-<p>To implement the ray-triangle intersection, I used the Möller-Trumbore algorithm. This algorithm is highly efficient because it directly solves for the intersection point and the barycentric coordinates without needing to calculate the plane equation first.</p>
-<p>The core of the algorithm combines the ray equation with the barycentric definition of a triangle: </p>
+<h1 id="part-5-adaptive-sampling">Part 5: Adaptive Sampling</h1>
+<h2 id="adaptive-sampling">Adaptive Sampling</h2>
+<p>In standard Monte Carlo path tracing, we usually shoot a fixed number of samples per pixel. However, this is computationally inefficient. Some pixels in a scene converge to their true color very quickly. Other pixels are "complex," such as areas with soft shadows, or glossy reflections, and they need a lot of samples to remove noise.</p>
+<p>Adaptive sampling is a technique that solves this problem. Instead of using a fixed number of samples for every pixel, we dynamically check if a pixel has converged while we are rendering it. If the pixel's color has stabilized, we stop sampling early for that pixel.</p>
+<p>To implement adaptive sampling, we use online statistics to track the mean and variance of the samples as we collect them:</p>
+<ul>
+<li><span class="arithmatex">\(s_1=\sum_{k=1}^n\limits L_k\)</span>: to accumulate the scalar illuminance of each sample.</li>
+<li><span class="arithmatex">\(s_2=\sum_{k=1}^n\limits L_k^2\)</span>: to accumulate the squared scalar illuminance of each sample.</li>
+</ul>
+<p>Checking for convergence after every single sample is too expensive. Instead, I check once every <code>samplesPerBatch</code>. During the check, I calculate the mean <span class="arithmatex">\(\mu\)</span> and the variance <span class="arithmatex">\(\sigma^2\)</span> of the samples using the following formulas:</p>
 <div class="arithmatex">\[
-O+tD=(1-b_1-b_2)P_0+b_1P_1+b_2P_2
+\mu = \frac{s_1}{n}, \quad \sigma^2 = \frac{1}{n-1}\left(s_2 - \frac{s_1^2}{n}\right)
 \]</div>
-<p>Where <span class="arithmatex">\(O\)</span> is the ray origin, <span class="arithmatex">\(D\)</span> is the ray direction, <span class="arithmatex">\(t\)</span> is the distance along the ray, and <span class="arithmatex">\(P_1, P_2, P_3\)</span> are the triangle vertices.</p>
-<p>By rearranging the terms and defining the edge vectors (<span class="arithmatex">\(E_1 = P_1 - P_0\)</span>, <span class="arithmatex">\(\vec{E}_2 = \vec{P}_2 - \vec{P}_0\)</span>) and the distance from the ray origin to the first vertex (<span class="arithmatex">\(S = O - P_0\)</span>), we construct a <span class="arithmatex">\(3 \times 3\)</span> linear system: <span class="arithmatex">\([-D, E_1, E_2] [t, b_1, b_2]^T = S\)</span>.</p>
-<p>Then, we solve this system for the unknowns (<span class="arithmatex">\(t\)</span>, <span class="arithmatex">\(b_1\)</span>, <span class="arithmatex">\(b_2\)</span>) using Cramer's rule, which expresses the solution in terms of determinants.</p>
-<div class="arithmatex">\[
-\begin{bmatrix} t \\ b_1 \\ b_2 \end{bmatrix} = \frac{1}{\det(D, E_1, E_2)} \begin{bmatrix} \det(S, E_1, E_2) \\ \det(-D, S, E_2) \\ \det(-D, E_1, S) \end{bmatrix}
-\]</div>
-<p>Finally, the determinants are rewritten using scalar triple products: <span class="arithmatex">\(\det(A, B, C) = A \cdot (B \times C) = - A \cdot (C \times B)\)</span>:</p>
-<div class="arithmatex">\[
-\begin{bmatrix} t \\ b_1 \\ b_2 \end{bmatrix} = \frac{1}{S_1 \cdot E_1} \begin{bmatrix} S_2 \cdot E_2 \\ S_1 \cdot S \\ S_2 \cdot D \end{bmatrix}
-\]</div>
-<p>Where <span class="arithmatex">\(S_1 = D \times E_2, S_2 = S \times E_1\)</span></p>
-<h2 id="result">Result</h2>
-<div style="display: flex; justify-content: center; gap: 1%; margin-top: 20px;">
-<figure style="width: 30%;">
-    <img alt="Part2.6.png" src="../images/Task1/CBspheres.png" />
-    <figcaption>CBspheres.dae</figcaption>
+<p>Next, we calculate <span class="arithmatex">\(I=1.96 \cdot \frac{\sigma}{\sqrt{n}}\)</span>, which represents the half-width of the <span class="arithmatex">\(95\%\)</span> confidence interval. According to the Central Limit Theorem, when the sample size is large enough, the sample mean follows a normal distribution. The value <span class="arithmatex">\(1.96\)</span> is the z-score that covers <span class="arithmatex">\(95\%\)</span> of the standard normal distribution.</p>
+<p>If <span class="arithmatex">\(I\)</span> is sufficiently small compared to the mean, we can confidently say the pixel has converged. The condition for early stopping is: <span class="arithmatex">\(I \leq \text{maxTolerance} \cdot \mu\)</span>. If this is true, we break out of the sampling loop early.</p>
+<h2 id="render-results">Render Results</h2>
+<div style="display: flex; justify-content: center; gap: 2%;">
+<figure style="width: 45%;">
+    <img alt="Part5.1_rate.png" src="../images/Task5/Part5.1_rate.png" />
+    <figcaption></figcaption>
   </figure>
-<figure style="width: 30%;">
-    <img alt="Part2.4.png" src="../images/Task1/Part1.2.png" />
+<figure style="width: 45%;">
+    <img alt="Part5.1.png" src="../images/Task5/Part5.1.png" />
     <figcaption>CBbunny.dae</figcaption>
   </figure>
-<figure style="width: 30%;">
-    <img alt="Part2.3.png" src="../images/Task1/Part1.3.png" />
-    <figcaption>CBdragon.dae</figcaption>
+</div>
+<div style="display: flex; justify-content: center; gap: 2%;">
+<figure style="width: 45%;">
+    <img alt="Part5.2_rate.png" src="../images/Task5/Part5.2_rate.png" />
+    <figcaption></figcaption>
+  </figure>
+<figure style="width: 45%;">
+    <img alt="Part5.2.png" src="../images/Task5/Part5.2.png" />
+    <figcaption>CBspheres_lambertian.dae</figcaption>
   </figure>
 </div>
+<p>The resulting sampling rate images clearly visualize how adaptive sampling dynamically distributes computational effort across the scene. In both images, the directly illuminated walls appear blue, meaning they converged very quickly and required only a small fraction of the maximum samples. Conversely, the complex regions—such as the soft shadows beneath the bunny and the spheres—appear red and green. This confirms that the algorithm successfully identified these difficult areas and concentrated the sampling rays there to eliminate noise.</p>
 
 
 

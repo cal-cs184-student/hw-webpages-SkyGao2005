@@ -1242,7 +1242,7 @@
 
 
 
-<h1 id="part-2-bounding-volume-hierarchy">Part 2: <strong>Bounding Volume Hierarchy</strong></h1>
+<h1 id="part-2-bounding-volume-hierarchy">Part 2: Bounding Volume Hierarchy</h1>
 <h2 id="bvh-construction-algorithm">BVH Construction Algorithm</h2>
 <p>In <code>BVHAccel::construct_bvh</code>, we use a recursive approach to build the bounding volume hierarchy. We first iterate from <code>start</code> to <code>end</code> to compute a bounding box (<code>BBox</code>) that includes all primitives in the current node. We then check the leaf node case: if the total number of primitives is less than or equal to <code>max_leaf_size</code>, we create a leaf node, assign the <code>start</code> and <code>end</code> iterators to it, and return the node.</p>
 <p>If the node contains more primitives than <code>max_leaf_size</code>, we must split it to create an internal node. For our splitting heuristic, we use the average centroid along the longest axis. We first compute a <code>centroid_bbox</code> that bounds the centroids of all current primitives. We evaluate the extents of this <code>centroid_bbox</code> in the <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span>, and <span class="arithmatex">\(z\)</span> dimensions and select the longest one as our splitting axis.</p>

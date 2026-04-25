@@ -14,6 +14,8 @@
         <link rel="prev" href="../Task3/">
       
       
+        <link rel="next" href="../Task5/">
+      
       
         
       
@@ -1415,6 +1417,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1649,8 +1679,8 @@ t_x = x - (x \bmod w)\quad t_y = y - (y \bmod h) \quad t_z = z - (z \bmod t)
 </div>
 <p>Adjusting the spring constant (<code>ks</code>) directly changes the stiffness of the structural and bending springs, which drastically affects how the cloth folds when self-colliding.</p>
 <ul>
-<li><code>ks = 500 N/m</code><strong>:</strong> With a low spring constant, the restorative forces in the springs are weak. This makes the cloth highly flexible, similar to a very thin fabric like silk. When the cloth falls and hits the ground, it offers little resistance to bending, causing it to crumple into many small, tight wrinkles.</li>
-<li><strong><code>ks = 50000 N/m</code>:</strong> With a high spring constant, the springs become very stiff and strongly resist any stretching or bending. The cloth behaves more like a rigid material such as thick leather. As it falls on itself, it resists crumpling and instead forms much larger, wider folds.</li>
+<li><code>ks = 500 N/m</code>: With a low spring constant, the restorative forces in the springs are weak. This makes the cloth highly flexible, similar to a very thin fabric like silk. When the cloth falls and hits the ground, it offers little resistance to bending, causing it to crumple into many small, tight wrinkles.</li>
+<li><code>ks = 50000 N/m</code>: With a high spring constant, the springs become very stiff and strongly resist any stretching or bending. The cloth behaves more like a rigid material such as thick leather. As it falls on itself, it resists crumpling and instead forms much larger, wider folds.</li>
 </ul>
 <h3 id="effects-of-changing-the-density">Effects of changing the density</h3>
 <div style="display: flex; justify-content: center; gap: 1%; margin-top: 20px;">
@@ -1691,8 +1721,8 @@ t_x = x - (x \bmod w)\quad t_y = y - (y \bmod h) \quad t_z = z - (z \bmod t)
 </div>
 <p>Adjusting the density changes the mass of each point mass. This affects how strongly gravity pulls on the cloth compared to the resistance of the springs.</p>
 <ul>
-<li><strong><code>density = 1</code>:</strong> When the density is low, the cloth is very light. The gravitational pull is weak, so the springs can easily resist bending and stretching. As the cloth falls, it does not crumple much under its own weight. Instead, it forms larger, wider folds. This behavior is very similar to a cloth with a high <code>ks</code>.</li>
-<li><code>density = 100</code><strong>:</strong> When the density is high, the cloth becomes very heavy. The strong downward pull of gravity easily overpowers the resistance of the springs. As the heavy cloth hits the ground, it collapses under its own weight, causing it to crumple into many small, tight wrinkles. This behavior closely mirrors a cloth with a low <code>ks</code>.</li>
+<li><code>density = 1</code>: When the density is low, the cloth is very light. The gravitational pull is weak, so the springs can easily resist bending and stretching. As the cloth falls, it does not crumple much under its own weight. Instead, it forms larger, wider folds. This behavior is very similar to a cloth with a high <code>ks</code>.</li>
+<li><code>density = 100</code>: When the density is high, the cloth becomes very heavy. The strong downward pull of gravity easily overpowers the resistance of the springs. As the heavy cloth hits the ground, it collapses under its own weight, causing it to crumple into many small, tight wrinkles. This behavior closely mirrors a cloth with a low <code>ks</code>.</li>
 </ul>
 
 

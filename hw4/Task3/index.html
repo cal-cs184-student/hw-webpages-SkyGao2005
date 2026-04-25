@@ -14,6 +14,8 @@
         <link rel="prev" href="../Task2/">
       
       
+        <link rel="next" href="../Task4/">
+      
       
         
       
@@ -1348,6 +1350,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1459,7 +1489,7 @@
 
 
 
-<h1 id="part-3-handling-collisions-with-other-objects">Part 3: <strong>Handling collisions with other objects</strong></h1>
+<h1 id="part-3-handling-collisions-with-other-objects">Part 3: Handling collisions with other objects</h1>
 <h2 id="algorithm-explanation">Algorithm Explanation</h2>
 <p>In this part, we implemented collision detection and response for the cloth with other primitives in the scene, specifically spheres and planes. To trigger these collisions, we iterate through all <code>PointMass</code> objects and check them against all <code>CollisionObject</code> items in the <code>Cloth::simulate</code> function. This is done right after updating the positions and before applying the spring constraints.</p>
 <h3 id="collision-with-spheres">Collision with Spheres</h3>

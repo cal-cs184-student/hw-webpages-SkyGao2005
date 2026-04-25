@@ -1,0 +1,1607 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cal-cs184-student.github.io/hw-webpages-SkyGao2005/hw4/Task5/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Homework 4 Write-Up - Gao Fei's CS184 Homework Webpage</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#homework-4-write-up" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gao Fei&#39;s CS184 Homework Webpage" class="md-header__button md-logo" aria-label="Gao Fei's CS184 Homework Webpage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gao Fei's CS184 Homework Webpage
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Homework 4 Write-Up
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hw1/Overview/" class="md-tabs__link">
+          
+  
+  
+  Homework 1
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hw2/Overview/" class="md-tabs__link">
+          
+  
+  
+  Homework 2
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hw3/Overview/" class="md-tabs__link">
+          
+  
+  
+  Homework 3
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Task1/" class="md-tabs__link">
+          
+  
+  
+  Homework 4
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Gao Fei&#39;s CS184 Homework Webpage" class="md-nav__button md-logo" aria-label="Gao Fei's CS184 Homework Webpage" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Gao Fei's CS184 Homework Webpage
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homework 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Homework 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw1/Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw1/Task1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw1/Task2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw1/Task3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw1/Task4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw1/Task5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw1/Task6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homework 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Homework 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw2/Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw2/Task1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw2/Task2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw2/Task3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw2/Task4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw2/Task5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw2/Task6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homework 3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Homework 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw3/Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw3/Task1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw3/Task2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw3/Task3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw3/Task4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw3/Task5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hw3/Task6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homework 4
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Homework 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="homework-4-write-up">Homework 4 Write-Up</h1>
+<p>分类: Write-Up</p>
+<h1 id="part-1-masses-and-springs">Part 1: Masses and springs</h1>
+<h2 id="algorithm-explanation">Algorithm Explanation</h2>
+<p>In this part, we build a mass-spring system to represent the cloth. The cloth is modeled as a grid of <code>PointMass</code> objects that are connected by <code>Spring</code> objects. The algorithm has two main steps: creating the point masses and then connecting them with springs.</p>
+<h3 id="creating-point-masses"><strong>Creating Point Masses</strong></h3>
+<p>We use a nested loop to iterate through the grid coordinates <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span>. Let <span class="arithmatex">\(W\)</span> represent <code>num_width_points</code> and <span class="arithmatex">\(H\)</span> represent <code>num_height_points</code>. First, we calculate the physical coordinates of each point:</p>
+<div class="arithmatex">\[
+px = \text{width} \times \frac{x}{W - 1} \quad py = \text{height} \times \frac{y}{H - 1}
+\]</div>
+<p>Next, we set the 3D position depending on the orientation of the cloth:</p>
+<ul>
+<li><strong>Horizontal:</strong> The cloth lies flat on the xz-plane. The y-coordinate is set to a constant value of 1.0: <span class="arithmatex">\(\text{pos} = (px, 1.0, py)\)</span></li>
+<li><strong>Vertical:</strong> The cloth hangs on the xy-plane. To prevent the cloth from perfectly overlapping itself and failing to fold later, we add a small random offset <span class="arithmatex">\(z_{\text{offset}}\)</span> between <span class="arithmatex">\(-0.001\)</span> and <span class="arithmatex">\(0.001\)</span>: <span class="arithmatex">\(\text{pos} = (px, py, z_{\text{offset}})\)</span></li>
+</ul>
+<p>During this step, we also check if the current <span class="arithmatex">\((x, y)\)</span> coordinate exists in the <code>pinned</code> list. If it does, we mark the point mass as <code>is_pinned = true</code>. Finally, we store all points in the <code>point_masses</code> vector using row-major order.</p>
+<h3 id="adding-springs"><strong>Adding Springs</strong></h3>
+<p>After all point masses are created, we loop through the grid a second time to create the springs. To find the current point mass in our 1D vector, we use the row-major index formula: <span class="arithmatex">\(\text{idx} = y \cdot W + x\)</span></p>
+<p>To avoid creating duplicate springs, we only connect the current point <span class="arithmatex">\((x, y)\)</span> to its top and left neighbors. We add three types of constraints:</p>
+<ul>
+<li><strong>Structural constraints:</strong> We connect <span class="arithmatex">\((x, y)\)</span> to its direct neighbors at <span class="arithmatex">\((x-1, y)\)</span> and <span class="arithmatex">\((x, y-1)\)</span>.</li>
+<li><strong>Shearing constraints:</strong> We connect <span class="arithmatex">\((x, y)\)</span> to its diagonal neighbors at <span class="arithmatex">\((x-1, y-1)\)</span> and <span class="arithmatex">\((x+1, y-1)\)</span>.</li>
+<li><strong>Bending constraints:</strong> We connect <span class="arithmatex">\((x, y)\)</span> to its neighbors that are two steps away at <span class="arithmatex">\((x-2, y)\)</span> and <span class="arithmatex">\((x, y-2)\)</span>.</li>
+</ul>
+<h1 id="screenshots">Screenshots</h1>
+<p>Here is the structure of the point masses and springs for <code>scene/pinned2.json</code> under different spring constraint settings.</p>
+<p><img alt="Task1.2.png" src="Homework%204%20Write-Up/Task1.2.png" /></p>
+<p><img alt="Task1.3.png" src="Homework%204%20Write-Up/Task1.3.png" /></p>
+<p><img alt="Task1.4.png" src="Homework%204%20Write-Up/Task1.4.png" /></p>
+<h1 id="part-2-simulation-via-numerical-integration">Part 2: Simulation via numerical integration</h1>
+<h2 id="parameter-tuning">Parameter Tuning</h2>
+<h3 id="effects-of-changing-the-spring-constant">Effects of changing the spring constant</h3>
+<p><img alt="Task2.1.png" src="Homework%204%20Write-Up/Task2.1.png" /></p>
+<p><img alt="Task2.3.png" src="Homework%204%20Write-Up/Task2.3.png" /></p>
+<p><img alt="Task2.4.png" src="Homework%204%20Write-Up/Task2.4.png" /></p>
+<p><img alt="Task2.2.png" src="Homework%204%20Write-Up/Task2.2.png" /></p>
+<p><img alt="Task2.5.png" src="Homework%204%20Write-Up/Task2.5.png" /></p>
+<p><img alt="Task2.6.png" src="Homework%204%20Write-Up/Task2.6.png" /></p>
+<ul>
+<li>With a very low <span class="arithmatex">\(k_s\)</span> (e.g., 50 <span class="arithmatex">\(N/m\)</span>), the springs are weak and offer little resistance, causing the cloth to stretch significantly like a loose fabric as it drops; in its final resting state, it forms a very deep sagging curve between the two pinned points, and the overall mesh appears noticeably distorted downwards.</li>
+<li>Using the default <span class="arithmatex">\(k_s\)</span> (5000 <span class="arithmatex">\(N/m\)</span>) provides a balanced simulation where the cloth falls and settles with a natural-looking curve, resembling typical fabrics like cotton.</li>
+<li>Conversely, when the spring constant is set to a very high value (e.g., 50000 <span class="arithmatex">\(N/m\)</span>), the springs become stiff. During the drop, the cloth holds its shape rigidly and exhibits fast micro-vibrations, and at rest, it hardly stretches at all, with the top edge remaining much straighter.</li>
+</ul>
+<h3 id="effects-of-changing-the-density">Effects of changing the density</h3>
+<p><img alt="Task2.1.png" src="Homework%204%20Write-Up/Task2.1%201.png" /></p>
+<p><img alt="Task2.7.png" src="Homework%204%20Write-Up/Task2.7.png" /></p>
+<p><img alt="Task2.9.png" src="Homework%204%20Write-Up/Task2.9.png" /></p>
+<p><img alt="Task2.2.png" src="Homework%204%20Write-Up/Task2.2%201.png" /></p>
+<p><img alt="Task2.8.png" src="Homework%204%20Write-Up/Task2.8.png" /></p>
+<p><img alt="Task2.10.png" src="Homework%204%20Write-Up/Task2.10.png" /></p>
+<ul>
+<li>With a very low density (e.g., 1 <span class="arithmatex">\(g/cm^2\)</span>), the gravitational force is weak relative to the spring stiffness, causing the cloth to barely sag; it holds its shape rigidly, and the top edge remains nearly straight.</li>
+<li>Using the default density (15 <span class="arithmatex">\(g/cm^2\)</span>) yields a balanced result with a natural, moderate sag typical of regular fabrics.</li>
+<li>In contrast, when the density is set very high (e.g., 100 <span class="arithmatex">\(g/cm^2\)</span>), the cloth becomes extremely heavy, and the strong downward pull of gravity easily overcomes the spring resistance. This results in the cloth stretching significantly as it drops, and in its final resting state, it forms a deep U-shaped droop between the pinned points.</li>
+</ul>
+<h3 id="effects-of-changing-the-damping">Effects of changing the damping</h3>
+<p><img alt="Task2.2.png" src="Homework%204%20Write-Up/Task2.2%202.png" /></p>
+<p><img alt="Task2.11.png" src="Homework%204%20Write-Up/Task2.11.png" /></p>
+<p><img alt="Task2.12.png" src="Homework%204%20Write-Up/Task2.12.png" /></p>
+<ul>
+<li>With very low damping (e.g., <span class="arithmatex">\(0\%\)</span>), the cloth retains almost all of its momentum; as it drops, it swings back and forth with chaotic ripples.</li>
+<li>Under the default damping (<span class="arithmatex">\(0.2\%\)</span>), the cloth loses energy at a realistic rate, exhibiting a natural slight swing before smoothly coming to a steady rest.</li>
+<li>In contrast, with a very high damping value (e.g., <span class="arithmatex">\(1.0\%\)</span>), the cloth falls incredibly slowly and settles directly into its final shape without any swinging.</li>
+</ul>
+<h2 id="final-rendering">Final Rendering</h2>
+<p><img alt="Task2.13.png" src="Homework%204%20Write-Up/Task2.13.png" /></p>
+<h1 id="part-3-handling-collisions-with-other-objects">Part 3: <strong>Handling collisions with other objects</strong></h1>
+<h2 id="algorithm-explanation_1">Algorithm Explanation</h2>
+<p>In this part, we implemented collision detection and response for the cloth with other primitives in the scene, specifically spheres and planes. To trigger these collisions, we iterate through all <code>PointMass</code> objects and check them against all <code>CollisionObject</code> items in the <code>Cloth::simulate</code> function. This is done right after updating the positions and before applying the spring constraints.</p>
+<h3 id="collision-with-spheres">Collision with Spheres</h3>
+<p>To handle collisions with spheres, we need to check if a point mass has moved inside the sphere. If it has, we push it back to the surface and apply friction.</p>
+<ul>
+<li>We first calculate the distance between the point mass's current position (<span class="arithmatex">\(p\)</span>) and the sphere's origin (<span class="arithmatex">\(o\)</span>). Then, we compare the squared distance with the squared radius (<span class="arithmatex">\(r^2\)</span>).
+If <span class="arithmatex">\(\|p - o\|^2 &lt; r^2\)</span>, a collision has occurred.</li>
+<li>Next, we find the closest point on the sphere's surface where the point mass should have hit. We do this by extending a vector from the origin to the current position until it reaches the surface:</li>
+</ul>
+<div class="arithmatex">\[
+p_{tangent} = o + r \cdot \frac{p - o}{\|p - o\|}
+\]</div>
+<ul>
+<li>Finally, we calculate the correction vector from the <code>last_position</code> (<span class="arithmatex">\(p_{last}\)</span>) to the <span class="arithmatex">\(p_{tangent}\)</span>, update the point mass's position, scaling the correction by <span class="arithmatex">\((1 - f)\)</span> to simulate energy loss due to friction (<span class="arithmatex">\(f\)</span>):</li>
+</ul>
+<div class="arithmatex">\[
+p_{new} = p_{last} + (p_{tangent} - p_{last}) \cdot (1 - f)
+\]</div>
+<h3 id="collision-with-planes">Collision with Planes</h3>
+<p>For planes, we need to detect if a point mass has crossed the plane during the current time step.</p>
+<ul>
+<li>We first calculate the signed distances from the plane to the <code>last_position</code> (<span class="arithmatex">\(d_{last}\)</span>) and the current <code>position</code> (<span class="arithmatex">\(d_{cur}\)</span>) using the plane's normal (<span class="arithmatex">\(\vec{n}\)</span>) and a point on the plane (<span class="arithmatex">\(p_{point}\)</span>):</li>
+</ul>
+<div class="arithmatex">\[
+d_{last} = (p_{last} - p_{point}) \cdot \vec{n} \quad d_{cur} = (p - p_{point}) \cdot \vec{n}
+\]</div>
+<p>If <span class="arithmatex">\(d_{last} \cdot d_{cur} &lt; 0\)</span>, it means the signs are different, so the point mass has crossed the plane.</p>
+<ul>
+<li>Next, we parameterize a line segment from <span class="arithmatex">\(p_{last}\)</span> to <span class="arithmatex">\(p\)</span> as <span class="arithmatex">\(p(t) = p_{last} + t \cdot \vec{dir}\)</span>, where <span class="arithmatex">\(\vec{dir} = p - p_{last}\)</span>. We solve for <span class="arithmatex">\(t\)</span> where the line intersects the plane:</li>
+</ul>
+<div class="arithmatex">\[
+t = \frac{(p_{point} - p_{last}) \cdot \vec{n}}{\vec{dir} \cdot \vec{n}}
+\]</div>
+<p>The intersection point (tangent point) is then <span class="arithmatex">\(p_{last} + t \cdot \vec{dir}\)</span>.</p>
+<ul>
+<li>Finally, to prevent numerical errors from keeping the point mass stuck inside the plane, we add a small <code>SURFACE_OFFSET</code> in the direction of the side the point came from (determined by the sign of <span class="arithmatex">\(d_{last}\)</span>), and apply the friction correction just like we did for the sphere:</li>
+</ul>
+<div class="arithmatex">\[
+p_{target} = p_{tangent} + \text{offset} \cdot \vec{n}_{side} \quad p_{new} = p_{last} + (p_{target} - p_{last}) \cdot (1 - f)  
+\]</div>
+<h2 id="results-and-comparison">Results and Comparison</h2>
+<p><img alt="Task3.2.png" src="Homework%204%20Write-Up/Task3.2.png" /></p>
+<p><img alt="Task3.1.png" src="Homework%204%20Write-Up/Task3.1.png" /></p>
+<p><img alt="Task3.3.png" src="Homework%204%20Write-Up/Task3.3.png" /></p>
+<ul>
+<li>At a low stiffness of <strong><code>ks = 500 N/m</code></strong>, the cloth acts like a very soft, stretchy fabric, with weak spring forces allowing gravity to pull it tightly against the sphere, creating numerous small folds that hang straight down.</li>
+<li>Using the default stiffness of <strong><code>ks = 5000 N/m</code></strong> produces a balanced material that drapes naturally, forming realistic folds without excessive stretching.</li>
+<li>Conversely, at a high stiffness of <strong><code>ks = 50000 N/m</code></strong>, the cloth behaves like a heavy, rigid material; the strong spring forces heavily resist bending and stretching, causing the cloth to rest higher on the sphere and create much stiffer folds.</li>
+</ul>
+<h2 id="shaded-result">Shaded result</h2>
+<p>…</p>
+<h1 id="part-4-handling-self-collisions">Part 4: Handling self-collisions</h1>
+<h2 id="algorithm-explanation_2">Algorithm Explanation</h2>
+<p>To prevent the cloth from clipping through itself when it falls, we need to implement self-collision. A naive approach would check every point mass against every other point mass, which takes <span class="arithmatex">\(O(n^2)\)</span> time. To optimize this to sub-<span class="arithmatex">\(O(n^2)\)</span> complexity, we use a spatial hashing algorithm.</p>
+<h3 id="hashing-positions">Hashing Positions</h3>
+<ul>
+<li>First, we divide the 3D space into 3D bounding boxes. The dimensions of each box are defined as:</li>
+</ul>
+<div class="arithmatex">\[
+w = 3.0 \times \frac{\text{width}}{\text{num\_width\_points}}, h = 3.0 \times \frac{\text{height}}{\text{num\_height\_points}}, t = \max(w, h)
+\]</div>
+<ul>
+<li>For any given 3D position <span class="arithmatex">\((x, y, z)\)</span>, we find the origin coordinate of the 3D box it belongs to by truncating the coordinates using the modulo operator:</li>
+</ul>
+<div class="arithmatex">\[
+t_x = x - (x \bmod w)\quad t_y = y - (y \bmod h) \quad t_z = z - (z \bmod t)
+\]</div>
+<ul>
+<li>Finally, we compute a unique <code>float</code> hash key using a linear combination of these truncated coordinates with prime numbers:</li>
+</ul>
+<div class="arithmatex">\[
+\text{hash} = t_x \times 31.0 + t_y \times 37.0 + t_z \times 41.0
+\]</div>
+<p>This ensures that point masses close to each other in the same 3D box will get the same hash key.</p>
+<h3 id="building-the-spatial-map">Building the Spatial Map</h3>
+<p>At every time step, we build a hash map where the key is the <code>float</code> hash and the value is a <code>vector</code> containing pointers to the <code>PointMass</code> objects inside that box. We loop through all <code>point_masses</code>, compute their hash key using <code>hash_position</code>, and insert them into the corresponding bucket in the map.</p>
+<h3 id="resolving-self-collisions">Resolving Self-Collisions</h3>
+<p>For a given <code>PointMass</code>, we only check for collisions with other point masses sharing the same hash bucket.</p>
+<ul>
+<li>First, we look up point mass’ hash key in the spatial map to get the list of candidate point masses. For each candidate, we calculate the distance <span class="arithmatex">\(d\)</span>. We ignore the candidate if it is the point mass itself, if <span class="arithmatex">\(d = 0\)</span>, or if <span class="arithmatex">\(d \ge 2 \times \text{thickness}\)</span>.</li>
+<li>If a collision happens (<span class="arithmatex">\(0 &lt; d &lt; 2 \times \text{thickness}\)</span>), we calculate a correction vector to push the points apart so their distance becomes exactly <span class="arithmatex">\(2 \times \text{thickness}\)</span>. Then, we sum up all valid correction vectors and divide by the number of collisions to get the average correction.</li>
+<li>Finally, to prevent jittering from applying the force too strongly at once, we divide the average correction by <code>simulation_steps</code> and add it to the point mass's position.</li>
+</ul>
+<h2 id="screenshots_1">Screenshots</h2>
+<p><img alt="Task4.1.png" src="Homework%204%20Write-Up/Task4.1.png" /></p>
+<p><img alt="Task4.2.png" src="Homework%204%20Write-Up/Task4.2.png" /></p>
+<p><img alt="Task4.3.png" src="Homework%204%20Write-Up/Task4.3.png" /></p>
+<h2 id="parameter-tuning_1">Parameter Tuning</h2>
+<h3 id="effects-of-changing-the-spring-constant_1">Effects of changing the spring constant</h3>
+<p><img alt="Task4.1.png" src="Homework%204%20Write-Up/Task4.1%201.png" /></p>
+<p><img alt="Task4.2.png" src="Homework%204%20Write-Up/Task4.2%201.png" /></p>
+<p><img alt="Task4.3.png" src="Homework%204%20Write-Up/Task4.3%201.png" /></p>
+<p><img alt="Task4.4.png" src="Homework%204%20Write-Up/Task4.4.png" /></p>
+<p><img alt="Task4.5.png" src="Homework%204%20Write-Up/Task4.5.png" /></p>
+<p><img alt="Task4.6.png" src="Homework%204%20Write-Up/Task4.6.png" /></p>
+<p><img alt="Task4.7.png" src="Homework%204%20Write-Up/Task4.7.png" /></p>
+<p><img alt="Task4.8.png" src="Homework%204%20Write-Up/Task4.8.png" /></p>
+<p><img alt="Task4.9.png" src="Homework%204%20Write-Up/Task4.9.png" /></p>
+<p>Adjusting the spring constant (<code>ks</code>) directly changes the stiffness of the structural and bending springs, which drastically affects how the cloth folds when self-colliding.</p>
+<ul>
+<li><code>ks = 500 N/m</code><strong>:</strong> With a low spring constant, the restorative forces in the springs are weak. This makes the cloth highly flexible, similar to a very thin fabric like silk. When the cloth falls and hits the ground, it offers little resistance to bending, causing it to crumple into many small, tight wrinkles.</li>
+<li><strong><code>ks = 50000 N/m</code>:</strong> With a high spring constant, the springs become very stiff and strongly resist any stretching or bending. The cloth behaves more like a rigid material such as thick leather. As it falls on itself, it resists crumpling and instead forms much larger, wider folds.</li>
+</ul>
+<h3 id="effects-of-changing-the-density_1">Effects of changing the density</h3>
+<p><img alt="Task4.1.png" src="Homework%204%20Write-Up/Task4.1%202.png" /></p>
+<p><img alt="Task4.2.png" src="Homework%204%20Write-Up/Task4.2%202.png" /></p>
+<p><img alt="Task4.3.png" src="Homework%204%20Write-Up/Task4.3%202.png" /></p>
+<p><img alt="Task4.10.png" src="Homework%204%20Write-Up/Task4.10.png" /></p>
+<p><img alt="Task4.13.png" src="Homework%204%20Write-Up/Task4.13.png" /></p>
+<p><img alt="Task4.11.png" src="Homework%204%20Write-Up/Task4.11.png" /></p>
+<p><img alt="Task4.14.png" src="Homework%204%20Write-Up/Task4.14.png" /></p>
+<p><img alt="Task4.12.png" src="Homework%204%20Write-Up/Task4.12.png" /></p>
+<p><img alt="Task4.15.png" src="Homework%204%20Write-Up/Task4.15.png" /></p>
+<p>Adjusting the density changes the mass of each point mass. This affects how strongly gravity pulls on the cloth compared to the resistance of the springs.</p>
+<ul>
+<li><strong><code>density = 1</code>:</strong> When the density is low, the cloth is very light. The gravitational pull is weak, so the springs can easily resist bending and stretching. As the cloth falls, it does not crumple much under its own weight. Instead, it forms larger, wider folds. This behavior is very similar to a cloth with a high <code>ks</code>.</li>
+<li><code>density = 100</code><strong>:</strong> When the density is high, the cloth becomes very heavy. The strong downward pull of gravity easily overpowers the resistance of the springs. As the heavy cloth hits the ground, it collapses under its own weight, causing it to crumple into many small, tight wrinkles. This behavior closely mirrors a cloth with a low <code>ks</code>.</li>
+</ul>
+<h1 id="part-5-shaders">Part 5: Shaders</h1>
+<h2 id="shader-programs">Shader Programs</h2>
+<p>A shader program is a piece of code that runs directly on the GPU to calculate how 3D objects should be drawn on the screen. The graphics pipeline mainly uses two types of shaders working together: the Vertex Shader and the Fragment Shader.</p>
+<ul>
+<li><strong>Vertex Shader:</strong> This shader processes each vertex of a 3D model. Its main job is to transform 3D coordinates from the world space into 2D screen coordinates. It also passes important vertex attributes—such as the world position (<code>v_position</code>), normal vectors (<code>v_normal</code>), and texture coordinates (<code>v_uv</code>)—to the next stage.</li>
+<li><strong>Fragment Shader:</strong> After the vertex shader, the GPU creates a 2D triangle on the screen and fills it with pixels (fragments) during rasterization. The GPU interpolates the attributes passed from the vertex shader for each pixel using barycentric coordinates. The fragment shader then takes these interpolated values to calculate the final color of the pixel using lighting models and textures.</li>
+</ul>
+<p>Together, the vertex shader sets up the geometry, and the fragment shader paints the surface details, lighting, and materials.</p>
+<h3 id="the-blinn-phong-shading-model">The Blinn-Phong Shading Model</h3>
+<p>The Blinn-Phong shading model is a lighting model used to simulate how light interacts with surfaces. It calculates the final color of a pixel by adding three separate lighting components together: Ambient, Diffuse, and Specular.</p>
+<ul>
+<li><strong>Ambient:</strong> This simulates indirect lighting that bounces around the environment. It ensures that objects in shadows are not completely black. It is a constant value independent of light or camera position.</li>
+</ul>
+<div class="arithmatex">\[
+L_a = k_a I_a
+\]</div>
+<ul>
+<li><strong>Diffuse:</strong> This simulates light scattering equally in all directions when it hits a rough surface. Its intensity depends on the angle between the surface normal (<span class="arithmatex">\(n\)</span>) and the light direction (<span class="arithmatex">\(l\)</span>).</li>
+</ul>
+<div class="arithmatex">\[
+L_d = k_d \frac{I}{r^2} \max(0, n \cdot l)
+\]</div>
+<ul>
+<li><strong>Specular:</strong> This creates bright highlights seen on shiny or glossy surfaces. Blinn-Phong simplifies the original Phong model by using a half-vector (<span class="arithmatex">\(h\)</span>), which is exactly halfway between the view direction (<span class="arithmatex">\(v\)</span>) and the light direction (<span class="arithmatex">\(l\)</span>). The highlight becomes brighter when the half-vector aligns closely with the surface normal.</li>
+</ul>
+<div class="arithmatex">\[
+h = \frac{l + v}{\|l + v\|},\quad L_s = k_s \frac{I}{r^2} \max(0, n \cdot h)^p
+\]</div>
+<p>The final output color is the sum of all three components:</p>
+<div class="arithmatex">\[
+L_{total} = L_a + L_d + L_s
+\]</div>
+<h3 id="screenshots_2">Screenshots</h3>
+<p><img alt="Task5.1.png" src="Homework%204%20Write-Up/Task5.1.png" /></p>
+<p><img alt="Task5.2.png" src="Homework%204%20Write-Up/Task5.2.png" /></p>
+<p><img alt="Task5.3.png" src="Homework%204%20Write-Up/Task5.3.png" /></p>
+<p><img alt="Task5.4.png" src="Homework%204%20Write-Up/Task5.4.png" /></p>
+<h2 id="texture-mapping">Texture Mapping</h2>
+<p><img alt="Task5.5.png" src="Homework%204%20Write-Up/Task5.5.png" /></p>
+<h2 id="bump-mapping-vs-displacement-mapping">Bump Mapping vs. Displacement Mapping</h2>
+<p><img alt="Task5.6.png" src="Homework%204%20Write-Up/Task5.6.png" /></p>
+<p><img alt="Task5.7.png" src="Homework%204%20Write-Up/Task5.7.png" /></p>
+<p><img alt="Task5.8.png" src="Homework%204%20Write-Up/Task5.8.png" /></p>
+<h3 id="comparison-of-the-two-approaches">Comparison of the Two Approaches</h3>
+<p><strong>Bump Mapping:</strong> This technique creates an illusion of depth. It modifies the normal vectors in the fragment shader to change how light reflects off the surface. This creates fake shadows and highlights that make the surface look bumpy. However, the actual physical geometry does not change. The outer edge of the bump-mapped sphere is still a perfectly smooth, round circle.</p>
+<p><strong>Displacement Mapping:</strong> This technique actually changes the geometry. In addition to modifying the normals for lighting, it reads the texture map and physically moves the positions of the vertices in the vertex shader. Because the actual 3D shape is changed, the outer edge of the displacement-mapped sphere is physically bumpy and is no longer a perfect circle.</p>
+<h3 id="reacting-to-mesh-coarseness">Reacting to Mesh Coarseness</h3>
+<p><img alt="Task5.9.png" src="Homework%204%20Write-Up/Task5.9.png" /></p>
+<p><img alt="Task5.11.png" src="Homework%204%20Write-Up/Task5.11.png" /></p>
+<p><img alt="Task5.10.png" src="Homework%204%20Write-Up/Task5.10.png" /></p>
+<p><img alt="Task5.12.png" src="Homework%204%20Write-Up/Task5.12.png" /></p>
+<p>Bump mapping is largely unaffected by the mesh resolution. Because it calculates the lighting and fakes the bumps at the pixel level (in the fragment shader), it still looks detailed and correct even on a very coarse mesh (<code>-o 16 -a 16</code>).</p>
+<p>Displacement mapping is highly dependent on mesh resolution. When using a coarse mesh (<code>-o 16 -a 16</code>), there are very few vertices available to move. As a result, the displaced sphere looks blocky, jagged. When using a high-resolution mesh (<code>-o 128 -a 128</code>), there are many more vertices. This allows the displacement shader to smoothly push and pull the geometry, accurately matching the fine details of the brick texture and creating a realistic physical shape.</p>
+<h2 id="mirror-shader">Mirror Shader</h2>
+<p><img alt="Task5.13.png" src="Homework%204%20Write-Up/Task5.13.png" /></p>
+<p><img alt="Task5.14.png" src="Homework%204%20Write-Up/Task5.14.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy", "md_in_html", "tables"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

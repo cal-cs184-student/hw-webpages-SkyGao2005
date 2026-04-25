@@ -1611,51 +1611,42 @@ t_x = x - (x \bmod w)\quad t_y = y - (y \bmod h) \quad t_z = z - (z \bmod t)
 </div>
 <h2 id="parameter-tuning">Parameter Tuning</h2>
 <h3 id="effects-of-changing-the-spring-constant">Effects of changing the spring constant</h3>
-<figure style="text-align: center;">
-  <div markdown="1" style="display: flex; justify-content: center; gap: 1%; margin-top: 20px;">
-    <figure markdown="span" style="width: 33%;">
-      ![Task4.1.png](images/Task4/Task4.1%201.png)
-    </figure>
-    <figure markdown="span" style="width: 33%;">
-      ![Task4.2.png](images/Task4/Task4.2%201.png)
-    </figure>
-    <figure markdown="span" style="width: 33%;">
-      ![Task4.3.png](images/Task4/Task4.3%201.png)
-    </figure>
-  </div>
-  <figcaption>$k_s=5000$</figcaption>
-</figure>
-
-<figure style="text-align: center;">
-  <div markdown="1" style="display: flex; justify-content: center; gap: 1%; margin-top: 20px;">
-    <figure markdown="span" style="width: 33%;">
-      ![Task4.4.png](images/Task4/Task4.4.png)
-    </figure>
-    <figure markdown="span" style="width: 33%;">
-      ![Task4.5.png](images/Task4/Task4.5.png)
-    </figure>
-    <figure markdown="span" style="width: 33%;">
-      ![Task4.6.png](images/Task4/Task4.6.png)
-    </figure>
-  </div>
-  <figcaption>$k_s=500$</figcaption>
-</figure>
-
-<figure style="text-align: center;">
-  <div markdown="1" style="display: flex; justify-content: center; gap: 1%; margin-top: 20px;">
-    <figure markdown="span" style="width: 33%;">
-      ![Task4.7.png](images/Task4/Task4.7.png)
-    </figure>
-    <figure markdown="span" style="width: 33%;">
-      ![Task4.8.png](images/Task4/Task4.8.png)
-    </figure>
-    <figure markdown="span" style="width: 33%;">
-      ![Task4.9.png](images/Task4/Task4.9.png)
-    </figure>
-  </div>
-  <figcaption>$k_s=50000$</figcaption>
-</figure>
-
+<div style="display: flex; justify-content: center; gap: 1%; margin-top: 20px;">
+<figure style="width: 33%;">
+    <img alt="Task4.1.png" src="../images/Task4/Task4.1%201.png" />
+    <figcaption><span class="arithmatex">\(k_s=5000\)</span></figcaption>
+  </figure>
+<figure style="width: 33%;">
+    <img alt="Task4.2.png" src="../images/Task4/Task4.2%201.png" />
+  </figure>
+<figure style="width: 33%;">
+    <img alt="Task4.3.png" src="../images/Task4/Task4.3%201.png" />
+  </figure>
+</div>
+<div style="display: flex; justify-content: center; gap: 1%; margin-top: 20px;">
+<figure style="width: 33%;">
+    <img alt="Task4.4.png" src="../images/Task4/Task4.4.png" />
+    <figcaption><span class="arithmatex">\(k_s=500\)</span></figcaption>
+  </figure>
+<figure style="width: 33%;">
+    <img alt="Task4.5.png" src="../images/Task4/Task4.5.png" />
+  </figure>
+<figure style="width: 33%;">
+    <img alt="Task4.6.png" src="../images/Task4/Task4.6.png" />
+  </figure>
+</div>
+<div style="display: flex; justify-content: center; gap: 1%; margin-top: 20px;">
+<figure style="width: 33%;">
+    <img alt="Task4.7.png" src="../images/Task4/Task4.7.png" />
+    <figcaption><span class="arithmatex">\(k_s=50000\)</span></figcaption>
+  </figure>
+<figure style="width: 33%;">
+    <img alt="Task4.8.png" src="../images/Task4/Task4.8.png" />
+  </figure>
+<figure style="width: 33%;">
+    <img alt="Task4.9.png" src="../images/Task4/Task4.9.png" />
+  </figure>
+</div>
 <p>Adjusting the spring constant (<code>ks</code>) directly changes the stiffness of the structural and bending springs, which drastically affects how the cloth folds when self-colliding.</p>
 <ul>
 <li><code>ks = 500 N/m</code><strong>:</strong> With a low spring constant, the restorative forces in the springs are weak. This makes the cloth highly flexible, similar to a very thin fabric like silk. When the cloth falls and hits the ground, it offers little resistance to bending, causing it to crumple into many small, tight wrinkles.</li>
@@ -1665,6 +1656,7 @@ t_x = x - (x \bmod w)\quad t_y = y - (y \bmod h) \quad t_z = z - (z \bmod t)
 <div style="display: flex; justify-content: center; gap: 1%; margin-top: 20px;">
 <figure style="width: 33%;">
     <img alt="Task4.1.png" src="../images/Task4/Task4.1%202.png" />
+    <figcaption>density=15</figcaption>
   </figure>
 <figure style="width: 33%;">
     <img alt="Task4.2.png" src="../images/Task4/Task4.2%202.png" />
@@ -1676,20 +1668,22 @@ t_x = x - (x \bmod w)\quad t_y = y - (y \bmod h) \quad t_z = z - (z \bmod t)
 <div style="display: flex; justify-content: center; gap: 1%; margin-top: 20px;">
 <figure style="width: 33%;">
     <img alt="Task4.10.png" src="../images/Task4/Task4.10.png" />
-  </figure>
-<figure style="width: 33%;">
-    <img alt="Task4.13.png" src="../images/Task4/Task4.13.png" />
+    <figcaption>density=1</figcaption>
   </figure>
 <figure style="width: 33%;">
     <img alt="Task4.11.png" src="../images/Task4/Task4.11.png" />
   </figure>
+<figure style="width: 33%;">
+    <img alt="Task4.12.png" src="../images/Task4/Task4.12.png" />
+  </figure>
 </div>
 <div style="display: flex; justify-content: center; gap: 1%; margin-top: 20px;">
 <figure style="width: 33%;">
-    <img alt="Task4.14.png" src="../images/Task4/Task4.14.png" />
+    <img alt="Task4.13.png" src="../images/Task4/Task4.13.png" />
+    <figcaption>density=100</figcaption>
   </figure>
 <figure style="width: 33%;">
-    <img alt="Task4.12.png" src="../images/Task4/Task4.12.png" />
+    <img alt="Task4.14.png" src="../images/Task4/Task4.14.png" />
   </figure>
 <figure style="width: 33%;">
     <img alt="Task4.15.png" src="../images/Task4/Task4.15.png" />
